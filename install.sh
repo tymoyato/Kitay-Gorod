@@ -6,6 +6,22 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
+# Check if the user is in the sudoers file
+printf "${YELLOW}Checking if the user has sudo privileges...${NC}\n"
+if ! sudo -n true 2>/dev/null; then
+    printf "${YELLOW}User does not have sudo privileges. Adding user to sudoers...${NC}\n"
+    if [[ "$(uname -s)" == "Linux" ]]; then
+        sudo_user=$(whoami)
+        sudo_command="echo '$sudo_user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
+        su -c "$sudo_command"
+    else
+        printf "${RED}Unsupported operating system for adding sudo privileges: $(uname -s)${NC}\n"
+        exit 1
+    fi
+else
+    printf "${GREEN}User has sudo privileges.${NC}\n"
+fi
+
 # Check if curl is installed
 printf "${YELLOW}Checking if curl is installed...${NC}\n"
 if ! command -v curl &> /dev/null
