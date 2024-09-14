@@ -22,19 +22,6 @@ else
     printf "${GREEN}User has sudo privileges.${NC}\n"
 fi
 
-# Check if git is installed on Linux
-if [[ "$(uname -s)" == "Linux" ]]; then
-    printf "${YELLOW}Checking if git is installed on Linux...${NC}\n"
-    if ! command -v git &> /dev/null
-    then
-        printf "${YELLOW}git is not installed. Installing git...${NC}\n"
-        sudo apt-get update
-        sudo apt-get install -y git
-    else
-        printf "${GREEN}git is already installed.${NC}\n"
-    fi
-fi
-
 # Check if curl is installed
 printf "${YELLOW}Checking if curl is installed...${NC}\n"
 if ! command -v curl &> /dev/null
@@ -52,6 +39,19 @@ then
     fi
 else
     printf "${GREEN}curl is already installed.${NC}\n"
+fi
+
+# Check if git is installed on Linux
+if [[ "$(uname -s)" == "Linux" ]]; then
+    printf "${YELLOW}Checking if git is installed on Linux...${NC}\n"
+    if ! command -v git &> /dev/null
+    then
+        printf "${YELLOW}git is not installed. Installing git...${NC}\n"
+        sudo apt-get update
+        sudo apt-get install -y git
+    else
+        printf "${GREEN}git is already installed.${NC}\n"
+    fi
 fi
 
 # Detect the operating system
