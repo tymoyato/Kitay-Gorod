@@ -6,6 +6,10 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
+# Detect the operating system
+printf "${YELLOW}Detecting the operating system...${NC}\n"
+OS=$(uname -s)
+
 if [[ "$OS" == "Linux" ]]; then
     # Check if the user is in the sudoers file
     printf "${YELLOW}Checking if the user has sudo privileges...${NC}\n"
@@ -53,12 +57,6 @@ if [[ "$OS" == "Linux" ]]; then
         printf "${GREEN}git is already installed.${NC}\n"
     fi
 fi
-
-
-
-# Detect the operating system
-printf "${YELLOW}Detecting the operating system...${NC}\n"
-OS=$(uname -s)
 
 # Function to install Homebrew
 install_homebrew() {
