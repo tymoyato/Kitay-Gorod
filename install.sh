@@ -23,7 +23,6 @@ install_git() {
         printf "${GREEN}git is already installed.${NC}\n"
     fi
 }
-
 # Function to install curl
 install_curl() {
     # Check if curl is installed
@@ -62,7 +61,6 @@ check_sudo() {
         printf "${GREEN}User has sudo privileges.${NC}\n"
     fi
 }
-
 # Function to install Homebrew
 install_homebrew() {
     if [[ "$OS" == "Linux" ]]; then
@@ -109,14 +107,28 @@ else
     fi
 fi
 
-# Ensure the PATH is correctly set
-printf "${YELLOW}Ensuring the PATH is correctly set...${NC}\n"
-if [[ "$OS" == "Linux" ]]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-elif [[ "$OS" == "Darwin" ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+# Function to check if Homebrew is installed
+check_brew_installed() {
+    if command -v brew &> /dev/null; then
+        return 0
+    else
+        return 1
+    fi
+}
 
-# Verify Homebrew installation
-printf "${YELLOW}Verifying Homebrew installation...${NC}\n"
-brew --version
+# Check if Homebrew is installed
+if ! check_brew_installed; then
+    printf "${YELLOW}Homebrew is not installed. Please install Homebrew first.${NC}\n"
+    exit 1
+else
+    # Ensure the PATH is correctly set
+    printf "${YELLOW}Ensuring the PATH is correctly set...${NC}\n"
+    if [[ "$OS" == "Linux" ]]; then
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    elif [[ "$OS" == "Darwin" ]]; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
+    # Verify Homebrew installation
+    printf "${YELLOW}Verifying Homebrew installation...${NC}\n"
+    brew --version
+fi
