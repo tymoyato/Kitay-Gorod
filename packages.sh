@@ -8,4 +8,4 @@ install_packages_with_brew() {
     printf "${GREEN}All packages installed successfully.${NC}\n"
 }
 
-install_packages_with_brew rbenv nvm
+install_packages_with_brew rbenv nvm fish
