@@ -118,7 +118,7 @@ check_brew_installed() {
 
 # Check if Homebrew is installed
 if ! check_brew_installed; then
-    printf "${YELLOW}Homebrew is not installed. Please install Homebrew first.${NC}\n"
+    printf "${YELLOW}need to source bashrc.${NC}\n"
     exit 1
 else
     # Ensure the PATH is correctly set
