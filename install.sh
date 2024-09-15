@@ -132,7 +132,7 @@ else
     printf "${YELLOW}Verifying Homebrew installation...${NC}\n"
     brew --version
 fi
-source ~/.bashrc
+. ~/.bashrc
 
 # Function to install packages with brew
 install_packages_with_brew() {
