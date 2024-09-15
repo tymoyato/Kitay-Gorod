@@ -142,5 +142,5 @@ else
     printf "${YELLOW}Verifying Homebrew installation...${NC}\n"
     brew --version
 fi
-
+source ~/.bashrc
 install_packages_with_brew rbenv nvm
