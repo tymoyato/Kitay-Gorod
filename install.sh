@@ -10,6 +10,13 @@ NC='\033[0m' # No Color
 printf "${YELLOW}Detecting the operating system...${NC}\n"
 OS=$(uname -s)
 
+# Linux install lib
+install_lib() {
+    printf "${YELLOW}Install lib on Linux...${NC}\n"
+    sudo apt update
+    sudo apt install build-essential
+}
+
 # Function to install git
 install_git() {
     # Check if git is installed on Linux
@@ -85,6 +92,7 @@ install_homebrew() {
     fi
 }
 
+install_lib
 install_git
 install_curl
 check_sudo
