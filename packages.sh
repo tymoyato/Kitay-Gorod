@@ -9,3 +9,11 @@ install_packages_with_brew() {
 }
 
 install_packages_with_brew rbenv nvm fish eza btop atuin jless difftastic bat fzf zoxide neovim fisher ripgrep nvim unzip
+
+# Function to install packages
+install_packages() {
+    printf "${YELLOW}Installing packages...${NC}\n"
+    printf "${YELLOW}Installing kitty...${NC}\n"
+    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+    printf "${GREEN}All packages installed successfully.${NC}\n"
+}
