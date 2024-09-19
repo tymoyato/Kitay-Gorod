@@ -8,6 +8,7 @@ chmod +x fonts.sh
 chmod +x nvchad.sh
 
 su
+echo "ervin ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 # Run sudo.sh
 ./sudo.sh
