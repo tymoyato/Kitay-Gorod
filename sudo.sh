@@ -1,17 +1,21 @@
 #!/bin/bash
 
-# Prompt for the root password and switch to the root user
-echo "Please enter the root password to proceed:"
-su -c "echo 'Switching to root user...'"
+# Get the current username
+CURRENT_USER=$(whoami)
 
-# Open the /etc/sudoers file with visudo (safe way to edit sudoers)
-su -c "nano"
+# Check if the user is already in the sudoers file
+if sudo grep -q "^${CURRENT_USER} " /etc/sudoers; then
+  echo "User ${CURRENT_USER} is already in the sudoers file."
+  exit 0
+fi
 
 # Add the current user to the sudoers file
-CURRENT_USER=$(whoami)
-su -c "echo '$CURRENT_USER ALL=(ALL:ALL) ALL' >> /etc/sudoers"
+echo "${CURRENT_USER} ALL=(ALL:ALL) ALL" | sudo EDITOR='tee -a' visudo
 
-# Exit the su session
-su -c "exit"
-
-echo "The current user has been added to the sudoers file."
+# Check if the user was added successfully
+if sudo grep -q "^${CURRENT_USER} " /etc/sudoers; then
+  echo "User ${CURRENT_USER} has been added to the sudoers file."
+else
+  echo "Failed to add user ${CURRENT_USER} to the sudoers file."
+  exit 1
+fi
