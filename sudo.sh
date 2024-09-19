@@ -7,7 +7,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Get the current user
-current_user=$(whoami)
+current_user=ervin
 
 # Check if there are any sudo users
 if ! grep -q '^[^#;]' /etc/sudoers; then
