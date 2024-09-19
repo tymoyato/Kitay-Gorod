@@ -5,7 +5,7 @@ echo "Please enter the root password to proceed:"
 su -c "echo 'Switching to root user...'"
 
 # Open the /etc/sudoers file with visudo (safe way to edit sudoers)
-su -c "visudo"
+su -c "nano"
 
 # Add the current user to the sudoers file
 CURRENT_USER=$(whoami)
