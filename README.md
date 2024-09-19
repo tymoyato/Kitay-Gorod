@@ -7,6 +7,8 @@ chmod +x packages.sh
 chmod +x fonts.sh
 chmod +x nvchad.sh
 
+su
+
 # Run sudo.sh
 ./sudo.sh
 
