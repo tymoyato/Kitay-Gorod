@@ -1,3 +1,8 @@
+#!/bin/bash
+
+source ./colors.sh
+source ./linux.sh
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 
 sudo rm -rf /opt/homebrew/Frameworks/
