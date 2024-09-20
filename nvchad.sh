@@ -10,5 +10,4 @@ else
   echo "The directory $nvim_config_dir does not exist. Cloning the repository..."
   git clone https://github.com/NvChad/starter "$nvim_config_dir"
   echo "Repository cloned successfully. Starting nvim..."
-  nvim
 fi
