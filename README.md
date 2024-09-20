@@ -2,7 +2,7 @@
 
 # Make each script executable
 chmod +x sudo.sh
-chmod +x install.sh
+chmod +x linux.sh
 chmod +x packages.sh
 chmod +x fonts.sh
 chmod +x nvchad.sh
