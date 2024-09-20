@@ -14,7 +14,7 @@ echo "ervin ALL=(ALL:ALL) ALL" >> /etc/sudoers
 ./sudo.sh
 
 # Run install.sh
-./install.sh
+./linux.sh
 
 # Source .bashrc
 source ~/.bashrc
