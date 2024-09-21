@@ -6,10 +6,7 @@ source ./curl.sh
 source ./git.sh
 source ./homebrew.sh
 source ./kitty.sh
-
-# Detect the operating system
-printf "${YELLOW}Detecting the operating system...${NC}\n"
-readonly OS=$(uname -s)
+source ./os.sh
 
 # Linux install lib
 install_lib() {
