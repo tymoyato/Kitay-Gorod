@@ -10,8 +10,21 @@ source ./os.sh
 # Linux install lib
 install_lib() {
     printf "${YELLOW}Install lib on Linux...${NC}\n"
-    sudo apt update
-    sudo apt install build-essential -y
+
+    # Update package list
+    if ! sudo apt update; then
+        printf "${RED}Failed to update package list.${NC}\n"
+        return 1
+    fi
+
+    # Install build-essential
+    if ! sudo apt install build-essential -y; then
+        printf "${RED}Failed to install build-essential.${NC}\n"
+        return 1
+    fi
+
+    printf "${GREEN}Successfully installed build-essential.${NC}\n"
+    return 0
 }
 
 check_sudo
