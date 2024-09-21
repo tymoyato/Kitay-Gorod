@@ -1,3 +1,3 @@
 # Detect the operating system
 
-readonly OS=$(uname -s)
+OS=$(uname -s)
