@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ./colors.sh
-source ./linux.sh
+source ./os.sh
 
 # Check if the user is in the sudoers file
 check_sudo() {
