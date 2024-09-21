@@ -18,6 +18,9 @@ chmod +x nvchad.sh
 # Run sudo.sh
 ./sudo.sh
 
+# Run fonts.sh
+./fonts.sh
+
 # Run homebrew.sh
 ./homebrew.sh
 
@@ -26,9 +29,6 @@ source ~/.bashrc
 
 # Run packages.sh
 ./packages.sh
-
-# Run fonts.sh
-./fonts.sh
 
 # Run nvchad.sh
 ./nvchad.sh
