@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ./colors.sh
-source ./linux.sh
+source ./os.sh
 
 setup_root() {
   # Check if the script is run as root
