@@ -32,38 +32,28 @@ install_lib() {
 #read -r signal < /tmp/check_sudo
 #rm /tmp/check_sudo
 
-# Function to run a command and capture its output using a named pipe
-run_and_capture() {
-    local cmd="$1"
-    local pipe="/tmp/${cmd}_pipe"
+# Create named pipes for each function
+mkfifo /tmp/install_lib_pipe
+mkfifo /tmp/install_git_pipe
+mkfifo /tmp/install_curl_pipe
+mkfifo /tmp/install_kitty_pipe
 
-    # Create the named pipe
-    mkfifo "$pipe"
+# Run the functions in the background and capture their outputs
+install_lib > /tmp/install_lib_pipe &
+install_git > /tmp/install_git_pipe &
+install_curl > /tmp/install_curl_pipe &
+install_kitty > /tmp/install_kitty_pipe &
 
-    # Run the command in the background and capture its output
-    $cmd > "$pipe" &
+# Read from the pipes to capture the outputs
+read -r lib_output < /tmp/install_lib_pipe
+read -r git_output < /tmp/install_git_pipe
+read -r curl_output < /tmp/install_curl_pipe
+read -r kitty_output < /tmp/install_kitty_pipe
 
-    # Read from the pipe to capture the output
-    local output
-    read -r output < "$pipe"
-
-    # Remove the named pipe
-    rm "$pipe"
-
-    # Return the output
-    echo "$output"
-}
-
-# Run the functions and capture their outputs
-lib_output=$(run_and_capture install_lib)
-git_output=$(run_and_capture install_git)
-curl_output=$(run_and_capture install_curl)
-kitty_output=$(run_and_capture install_kitty)
-
-# Optionally, you can print the outputs for debugging purposes
-echo "install_lib output: $lib_output"
-echo "install_git output: $git_output"
-echo "install_curl output: $curl_output"
-echo "install_kitty output: $kitty_output"
+# Remove the named pipes
+rm /tmp/install_lib_pipe
+rm /tmp/install_git_pipe
+rm /tmp/install_curl_pipe
+rm /tmp/install_kitty_pipe
 
 printf "${GREEN}All installations completed.${NC}\n"
