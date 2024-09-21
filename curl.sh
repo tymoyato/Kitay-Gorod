@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ./colors.sh
-source ./linux.sh
+source ./os.sh
 
 # Function to install curl
 install_curl() {
