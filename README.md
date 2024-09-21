@@ -7,6 +7,7 @@ chmod +x linux.sh
 chmod +x fonts.sh
 chmod +x homebrew.sh
 chmod +x packages.sh
+chmod +x nvchad.sh
 
 # Run os.sh
 ./os.sh
@@ -29,3 +30,5 @@ source ~/.bashrc
 # Run fonts.sh
 ./fonts.sh
 
+# Run nvchad.sh
+./nvchad.sh
