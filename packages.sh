@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ./colors.sh
-source ./linux.sh
+source ./os.sh
 
 # Function to install packages with brew
 install_packages_with_brew() {
