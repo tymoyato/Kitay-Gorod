@@ -13,7 +13,7 @@ install_lib() {
     sudo apt install build-essential -y
 }
 
+check_sudo
 install_lib
 install_git
 install_curl
-check_sudo
