@@ -9,7 +9,7 @@ install_homebrew() {
     if [[ "$OS" == "Linux" ]]; then
         # Install Homebrew on Linux
         printf "${YELLOW}Installing Homebrew on Linux...${NC}\n"
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         # Add Homebrew to the PATH
         printf "${YELLOW}Adding Homebrew to the PATH on Linux...${NC}\n"
         echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
@@ -17,7 +17,7 @@ install_homebrew() {
     elif [[ "$OS" == "Darwin" ]]; then
         # Install Homebrew on macOS
         printf "${YELLOW}Installing Homebrew on macOS...${NC}\n"
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         # Add Homebrew to the PATH
         printf "${YELLOW}Adding Homebrew to the PATH on macOS...${NC}\n"
         echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bashrc
