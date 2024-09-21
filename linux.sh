@@ -22,17 +22,9 @@ install_lib() {
 
 # Run each function in the background and wait for it to complete before proceeding to the next one
 check_sudo &
-wait
-
 install_lib &
-wait
-
 install_git &
-wait
-
 install_curl &
-wait
-
 install_kitty &
 wait
 
