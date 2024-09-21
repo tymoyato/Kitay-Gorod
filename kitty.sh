@@ -20,7 +20,7 @@ install_kitty() {
     fi
 
     # Create symbolic links to add kitty and kitten to PATH (assuming ~/.local/bin is in your system-wide PATH)
-    if ! ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/; then
+    if ! ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/bin/; then
         printf "${RED}Failed to create symbolic links for kitty and kitten.${NC}\n"
         return 1
     fi
