@@ -6,10 +6,6 @@ chmod +x sudo.sh
 chmod +x linux.sh
 chmod +x fonts.sh
 
-su
-
-echo "ervin ALL=(ALL:ALL) ALL" >> /etc/sudoers
-
 # Run os.sh
 ./os.sh
 
