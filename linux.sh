@@ -19,6 +19,10 @@ install_lib
 install_git
 install_curl
 check_sudo
+install_homebrew
+install_kitty
+install_nvchad
+
 # Check if Homebrew is already installed
 printf "${YELLOW}Checking if Homebrew is already installed...${NC}\n"
 if ! command -v brew &> /dev/null
