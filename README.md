@@ -5,6 +5,7 @@ chmod +x os.sh
 chmod +x sudo.sh
 chmod +x linux.sh
 chmod +x fonts.sh
+chmod +x homebrew.sh
 
 # Run os.sh
 ./os.sh
