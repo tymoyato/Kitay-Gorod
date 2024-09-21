@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ./colors.sh
-source ./linux.sh
+source ./os.sh
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 
