@@ -12,7 +12,7 @@ source ./os.sh
 install_lib() {
     printf "${YELLOW}Install lib on Linux...${NC}\n"
     sudo apt update
-    sudo apt install build-essential
+    sudo apt install build-essential -y
 }
 
 install_lib
