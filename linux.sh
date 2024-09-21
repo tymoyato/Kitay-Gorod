@@ -23,34 +23,6 @@ install_homebrew
 install_kitty
 install_nvchad
 
-# Check if Homebrew is already installed
-printf "${YELLOW}Checking if Homebrew is already installed...${NC}\n"
-if ! command -v brew &> /dev/null
-then
-    printf "${YELLOW}Homebrew is not installed. Installing Homebrew...${NC}\n"
-    install_homebrew
-else
-    printf "${GREEN}Homebrew is already installed.${NC}\n"
-    # Check if install_packages.sh exists
-    if [[ -f install_packages.sh ]]; then
-        # Run the script to install other packages
-        printf "${YELLOW}Running the script to install other packages...${NC}\n"
-        bash install_packages.sh
-    else
-        printf "${RED}Error: install_packages.sh not found.${NC}\n"
-        exit 1
-    fi
-fi
-
-# Function to check if Homebrew is installed
-check_brew_installed() {
-    if command -v brew &> /dev/null; then
-        return 0
-    else
-        return 1
-    fi
-}
-
 # Check if Homebrew is installed
 if ! check_brew_installed; then
     printf "${YELLOW}need to source bashrc.${NC}\n"
