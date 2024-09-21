@@ -15,9 +15,9 @@ else
     if [[ -f packages.sh ]]; then
         # Run the script to install other packages
         printf "${YELLOW}Running the script to install other packages...${NC}\n"
-        bash install_packages.sh
+        bash packages.sh
     else
-        printf "${RED}Error: install_packages.sh not found.${NC}\n"
+        printf "${RED}Error: packages.sh not found.${NC}\n"
         exit 1
     fi
 fi

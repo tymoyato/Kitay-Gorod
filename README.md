@@ -20,3 +20,6 @@ source ~/.bashrc
 
 # Run fonts.sh
 ./fonts.sh
+
+# Run homebrew.sh
+./homebrew.sh
