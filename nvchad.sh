@@ -16,3 +16,4 @@ install_nvchad() {
     printf "${GREEN}Repository cloned successfully.${NC}\n"
   fi
 }
+install_nvchad
