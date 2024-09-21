@@ -2,6 +2,7 @@
 
 source ./colors.sh
 source ./os.sh
+source ./packages.sh
 
 # Function to install Homebrew
 install_homebrew() {
