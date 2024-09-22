@@ -12,8 +12,11 @@ chmod +x nvchad.sh
 # Run os.sh
 ./os.sh
 
-# Run install.sh
+# Run linux.sh
 ./linux.sh
+
+# Run kitty.sh
+./kitty.sh
 
 # Run sudo.sh
 ./sudo.sh
