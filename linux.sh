@@ -31,6 +31,5 @@ check_sudo
 install_lib
 install_git
 install_curl
-install_kitty
 
 printf "${GREEN}All installations completed.${NC}\n"
