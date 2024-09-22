@@ -8,6 +8,7 @@ chmod +x fonts.sh
 chmod +x homebrew.sh
 chmod +x packages.sh
 chmod +x nvchad.sh
+chmod +x kitty.sh
 
 # Run os.sh
 ./os.sh
