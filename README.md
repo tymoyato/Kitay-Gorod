@@ -9,6 +9,7 @@ chmod +x homebrew.sh
 chmod +x packages.sh
 chmod +x nvchad.sh
 chmod +x kitty.sh
+chmod +x fish.sh
 
 # Run os.sh
 ./os.sh
@@ -36,3 +37,6 @@ source ~/.bashrc
 
 # Run nvchad.sh
 ./nvchad.sh
+
+# Run fish.sh
+./fish.sh
