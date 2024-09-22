@@ -5,6 +5,7 @@ source ./check_sudo.sh
 source ./curl.sh
 source ./git.sh
 source ./os.sh
+source ./brave.sh
 
 # Linux install lib
 install_lib() {
@@ -30,5 +31,6 @@ check_sudo
 install_lib
 install_git
 install_curl
+install_brave
 
 printf "${GREEN}All installations completed.${NC}\n"
