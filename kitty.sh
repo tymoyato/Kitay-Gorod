@@ -51,3 +51,4 @@ install_kitty() {
     printf "${GREEN}kitty installed successfully.${NC}\n"
     return 0
 }
+install_kitty
