@@ -4,7 +4,6 @@ source ./colors.sh
 source ./check_sudo.sh
 source ./curl.sh
 source ./git.sh
-source ./kitty.sh
 source ./os.sh
 
 # Linux install lib
