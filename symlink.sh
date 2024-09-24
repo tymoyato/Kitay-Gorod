@@ -14,3 +14,4 @@ ln -sf ~/tmp/nvim ~/.config/
 set -Ux fish_user_paths /home/linuxbrew/.linuxbrew/bin $fish_user_paths
 #go
 bash < <(curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+sudo apt-get install zlib1g-dev
