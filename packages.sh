@@ -14,7 +14,7 @@ install_packages_with_brew() {
 }
 
 # List of packages to install
-packages=(rbenv nvm fish eza btop atuin jless difftastic bat fzf zoxide neovim fisher ripgrep nvim unzip zellij)
+packages=(rbenv nvm fish eza btop atuin jless difftastic bat fzf zoxide neovim fisher ripgrep nvim unzip zellij bison)
 
 # Call the function with the list of packages
 install_packages_with_brew "${packages[@]}"
