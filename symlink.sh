@@ -12,3 +12,5 @@ ln -sf ~/tmp/nvim ~/.config/
 
 # fish linux
 set -Ux fish_user_paths /home/linuxbrew/.linuxbrew/bin $fish_user_paths
+#go
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
