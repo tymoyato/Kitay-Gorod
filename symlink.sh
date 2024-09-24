@@ -15,3 +15,6 @@ set -Ux fish_user_paths /home/linuxbrew/.linuxbrew/bin $fish_user_paths
 #go
 bash < <(curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 sudo apt-get install zlib1g-dev
+rbenv install 3.3.0
+rbenv global 3.3.0
+gem install bundler
