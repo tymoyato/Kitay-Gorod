@@ -33,7 +33,7 @@ install_packages_with_apt "${apt_packages_core[@]}"
 # Add sources of packages
 source_brave
 apt_packages_essential=($(echo $apt_packages_essential_json | jq -r '.[]'))
-install_packages_with_apt "${apt_packages_essential[@]}
+install_packages_with_apt "${apt_packages_essential[@]}"
 
 install_packages
 
