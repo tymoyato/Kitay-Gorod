@@ -2,6 +2,7 @@
 
 . ./utils/colors.sh
 . ./utils/check_sudo.sh
+. ./utils/check_curl.sh
 . ./utils/check_command.sh
 . ./linux/apt_install_packages.sh
 . ./linux/brew_install_packages.sh
