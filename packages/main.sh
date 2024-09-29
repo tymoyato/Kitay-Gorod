@@ -5,4 +5,5 @@ install_packages() {
     install_kitty
     install_nvchad
     install_homebrew
+    install_gvm
 }

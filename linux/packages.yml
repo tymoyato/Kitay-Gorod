@@ -5,6 +5,7 @@ apt:
     - curl
   essential:
     - brave-browser
+    - zlib1g-dev
 brew:
   - rbenv
   - nvm
