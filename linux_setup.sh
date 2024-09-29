@@ -27,8 +27,8 @@ install_packages_with_apt "${apt_packages[@]}"
 
 install_packages
 
-# source ~/.bashrc
-# brew_packages=($(echo $brew_packages_json | jq -r '.[]'))
-# install_packages_with_brew "${brew_packages[@]}"
+source ~/.bashrc
+brew_packages=($(echo $brew_packages_json | jq -r '.[]'))
+install_packages_with_brew "${brew_packages[@]}"
 
 printf "${GREEN}All installations completed.${NC}\n"
