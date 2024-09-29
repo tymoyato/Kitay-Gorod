@@ -1,8 +1,5 @@
 #!/bin/bash
 
-source ./colors.sh
-source ./os.sh
-
 check_sudo() {
     printf "${YELLOW}Checking if the user has sudo privileges...${NC}\n"
 

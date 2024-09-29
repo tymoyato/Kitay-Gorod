@@ -1,9 +1,8 @@
 #!/bin/bash
 
-source ./colors.sh
-source ./os.sh
-
 install_nvchad() {
+  check_git
+  printf "${YELLOW}Installing nvchad...${NC}\n"
   # Define the directory path
   nvim_config_dir="$HOME/.config/nvim"
 
@@ -16,4 +15,3 @@ install_nvchad() {
     printf "${GREEN}Repository cloned successfully.${NC}\n"
   fi
 }
-install_nvchad

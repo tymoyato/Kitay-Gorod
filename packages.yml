@@ -1,0 +1,24 @@
+apt:
+  - build-essential
+  - git
+  - curl
+  - brave-browser
+brew:
+  - rbenv
+  - nvm
+  - fish
+  - eza
+  - btop
+  - atuin
+  - jless
+  - difftastic
+  - bat
+  - fzf
+  - zoxide
+  - neovim
+  - fisher
+  - ripgrep
+  - nvim
+  - unzip
+  - zellij
+  - bison
