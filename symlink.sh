@@ -10,25 +10,34 @@
 # rm -rf ~/.config/nvim
 # ln -sf ~/tmp/nvim ~/.config/
 
-# Define an array of source and target pairs
-declare -a configs=(
-    "fish ~/.config/fish"
-    "kitty ~/.config/kitty"
-    "Preferences ~/.config/BraveSoftware/Brave-Browser/Default/Preferences"
-    "nvim ~/.config/nvim"
-)
+# Function to remove and link configuration files
+setup_configs() {
+    local config_dir="$HOME/.config"
+    local tmp_dir="$HOME/tmp/dotfiles"
 
-# Iterate over each pair
-for config in "${configs[@]}"; do
-    # Split the pair into source and target
-    IFS=' ' read -r src tgt <<< "$config"
+    # List of configuration directories and files
+    local configs=(
+        "fish"
+        "kitty"
+        "nvim"
+        "BraveSoftware/Brave-Browser/Default/Preferences"
+    )
 
-    # Remove the target directory or file
-    rm -rf "$tgt"
+    # Remove existing configurations
+    for config in "${configs[@]}"; do
+        rm -rf "$config_dir/$config"
+    done
 
-    # Create a symbolic link from the source to the target
-    ln -sf "~/tmp/dotfiles/$src" "$tgt"
-done
+    # Create symbolic links
+    for config in "${configs[@]}"; do
+        ln -sf "$tmp_dir/$config" "$config_dir/$config"
+    done
+
+    echo "Configurations have been set up."
+}
+
+# Call the function
+setup_configs
 
 # fish linux
 set -Ux fish_user_paths /home/linuxbrew/.linuxbrew/bin $fish_user_paths
