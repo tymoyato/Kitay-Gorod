@@ -11,6 +11,7 @@
 . ./packages/kitty.sh
 . ./packages/nvchad.sh
 . ./packages/homebrew.sh
+. ./packages/gvm.sh
 . ./packages/main.sh
 . ./sources/fish.sh
 . ./sources/brave.sh
