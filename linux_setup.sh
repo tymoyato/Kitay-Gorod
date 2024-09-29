@@ -3,8 +3,8 @@
 . ./utils/colors.sh
 . ./utils/check_sudo.sh
 . ./utils/check_command.sh
-. ./apt_install_packages.sh
-. ./brew_install_packages.sh
+. ./linux/apt_install_packages.sh
+. ./linux/brew_install_packages.sh
 . ./utils/os.sh
 . ./packages/fonts.sh
 . ./packages/kitty.sh
@@ -20,8 +20,8 @@ if ! command -v yq &> /dev/null; then
     sudo apt-get install -y yq
 fi
 # Extract the JSON array using yq
-apt_packages_json=$(yq '.apt' ./packages.yml)
-brew_packages_json=$(yq '.brew' ./packages.yml)
+apt_packages_json=$(yq '.apt' ./linux/packages.yml)
+brew_packages_json=$(yq '.brew' ./linux/packages.yml)
 
 # Convert the JSON array to a Bash array using jq
 apt_packages=($(echo $apt_packages_json | jq -r '.[]'))
