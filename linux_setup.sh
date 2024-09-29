@@ -10,6 +10,7 @@
 . ./packages/nvchad.sh
 . ./packages/homebrew.sh
 . ./packages/main.sh
+. ./sources/fish.sh
 
 check_sudo
 
@@ -30,5 +31,7 @@ install_packages
 source ~/.bashrc
 brew_packages=($(echo $brew_packages_json | jq -r '.[]'))
 install_packages_with_brew "${brew_packages[@]}"
+
+source_fish
 
 printf "${GREEN}All installations completed.${NC}\n"
