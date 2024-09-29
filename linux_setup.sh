@@ -12,6 +12,7 @@
 . ./packages/homebrew.sh
 . ./packages/main.sh
 . ./sources/fish.sh
+. ./sources/brave.sh
 
 check_sudo
 
