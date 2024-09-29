@@ -1,8 +1,10 @@
 apt:
-  - build-essential
-  - git
-  - curl
-  - brave-browser
+  core:
+    - build-essential
+    - git
+    - curl
+  essential:
+    - brave-browser
 brew:
   - rbenv
   - nvm

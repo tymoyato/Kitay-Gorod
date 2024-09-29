@@ -20,12 +20,18 @@ if ! command -v yq &> /dev/null; then
     sudo apt-get install -y yq
 fi
 # Extract the JSON array using yq
-apt_packages_json=$(yq '.apt' ./linux/packages.yml)
+apt_packages_core_json=$(yq '.apt.core' ./linux/packages.yml)
+apt_packages_essential_json=$(yq '.apt.essential' ./linux/packages.yml)
 brew_packages_json=$(yq '.brew' ./linux/packages.yml)
 
 # Convert the JSON array to a Bash array using jq
-apt_packages=($(echo $apt_packages_json | jq -r '.[]'))
-install_packages_with_apt "${apt_packages[@]}"
+apt_packages_core=($(echo $apt_packages_core_json | jq -r '.[]'))
+install_packages_with_apt "${apt_packages_core[@]}"
+
+# Add sources of packages
+source_brave
+apt_packages_essential=($(echo $apt_packages_essential_json | jq -r '.[]'))
+install_packages_with_apt "${apt_packages_essential[@]}
 
 install_packages
 
