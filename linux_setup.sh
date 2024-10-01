@@ -17,7 +17,6 @@
 . ./sources/brave.sh
 
 check_sudo
-sudo -s
 
 if ! command -v yq &> /dev/null; then
     sudo apt-get update
