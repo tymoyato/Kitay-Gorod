@@ -1,4 +1,5 @@
 time (
+
   wget https://github.com/tymoyato/tmp/archive/refs/heads/main.zip
   
   unzip main.zip
@@ -14,6 +15,7 @@ time (
   bash -i linux_setup.sh
   
   sudo pkill -u $(whoami)
+  
 )
 
 run fish.sh in fish shell
