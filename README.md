@@ -10,7 +10,7 @@ chmod +x ./linux_setup.sh
 
 chmod +x ./fish.sh
 
-sudo bash -i linux_setup.sh
+bash -i linux_setup.sh
 
 sudo pkill -u $(whoami)
 
