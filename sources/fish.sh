@@ -2,7 +2,7 @@
 
 source_fish() {
   printf "${YELLOW}add fish shell...${NC}\n"
-  add-shell /home/linuxbrew/.linuxbrew/bin/fish
+  sudo add-shell /home/linuxbrew/.linuxbrew/bin/fish
   check_command "sudo add-shell /home/linuxbrew/.linuxbrew/bin/fish"
 
   printf "${YELLOW}set fish shell default...${NC}\n"
