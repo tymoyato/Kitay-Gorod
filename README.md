@@ -15,4 +15,5 @@ time (
   
   sudo pkill -u $(whoami)
 )
+
 run fish.sh in fish shell
