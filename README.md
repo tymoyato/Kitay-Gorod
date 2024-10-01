@@ -8,6 +8,8 @@ unzip main.zip
 
 mv tmp-main tmp
 
+cd tmp
+
 bash -i linux_setup.sh
 
 run fish.sh in fish shell
