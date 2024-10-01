@@ -1,21 +1,23 @@
-time (
+wget https://github.com/tymoyato/tmp/archive/refs/heads/main.zip
+  
+unzip main.zip
+  
+mv tmp-main tmp
 
-  wget https://github.com/tymoyato/tmp/archive/refs/heads/main.zip
+cd tmp
+
+chmod +x ./linux_setup.sh
   
-  unzip main.zip
+chmod +x ./fish.sh
   
-  mv tmp-main tmp
-  
-  cd tmp
-  
-  chmod +x ./linux_setup.sh
-  
-  chmod +x ./fish.sh
-  
+time (
+    
   bash -i linux_setup.sh
   
-  sudo pkill -u $(whoami)
-  
 )
+
+sleep 10
+
+sudo pkill -u $(whoami)
 
 run fish.sh in fish shell
