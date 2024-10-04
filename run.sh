@@ -10,6 +10,8 @@ chmod +x ./linux_setup.sh
 
 chmod +x ./fish.sh
 
+chmod +x ./symlink.sh
+
 time (
 
 bash -i linux_setup.sh
