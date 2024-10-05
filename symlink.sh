@@ -27,6 +27,3 @@ setup_configs() {
 
 # Call the function
 setup_configs
-
-# fish linux
-set -Ux fish_user_paths /home/linuxbrew/.linuxbrew/bin $fish_user_paths
