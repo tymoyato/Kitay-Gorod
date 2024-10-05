@@ -12,6 +12,7 @@ check_sudo() {
             sudo_command="echo '$sudo_user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
 
             # Add the user to sudoers
+            printf "${YELLOW}enter superuser password${NC}\n"
             if ! su -c "$sudo_command"; then
                 printf "${RED}Failed to add user to sudoers.${NC}\n"
                 return 1
