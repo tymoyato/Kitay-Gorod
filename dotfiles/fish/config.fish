@@ -7,6 +7,7 @@ set -Ux fish_user_paths /home/linuxbrew/.linuxbrew/bin $fish_user_paths
 alias g git
 alias v nvim
 alias zj zellij
+alias z zoxide
 
 #eza
 # general use aliases updated for eza
