@@ -16,7 +16,7 @@ chmod +x ./symlink.sh
 
 time (
 
-bash -i linux_setup.sh
+	bash -i linux_setup.sh
 
 )
 

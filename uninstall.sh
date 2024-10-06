@@ -12,37 +12,37 @@ brew cleanup
 
 # List of directories to remove
 directories=(
-    "/opt/homebrew/Frameworks/"
-    "/opt/homebrew/bin/"
-    "/opt/homebrew/etc/"
-    "/opt/homebrew/include/"
-    "/opt/homebrew/lib/"
-    "/opt/homebrew/opt/"
-    "/opt/homebrew/sbin/"
-    "/opt/homebrew/share/"
-    "/opt/homebrew/var/"
-    "/home/linuxbrew/.linuxbrew/etc/"
-    "/home/linuxbrew/.linuxbrew/lib/"
+	"/opt/homebrew/Frameworks/"
+	"/opt/homebrew/bin/"
+	"/opt/homebrew/etc/"
+	"/opt/homebrew/include/"
+	"/opt/homebrew/lib/"
+	"/opt/homebrew/opt/"
+	"/opt/homebrew/sbin/"
+	"/opt/homebrew/share/"
+	"/opt/homebrew/var/"
+	"/home/linuxbrew/.linuxbrew/etc/"
+	"/home/linuxbrew/.linuxbrew/lib/"
 )
 
 # Loop through each directory and remove it
 for dir in "${directories[@]}"; do
-    sudo rm -rf "$dir"
+	sudo rm -rf "$dir"
 done
 
 echo "Directories removed successfully."
 
 # Function to uninstall packages with apt
 uninstall_packages_with_apt() {
-    # Update package lists
-    printf "${YELLOW}Updating package lists...${NC}\n"
-    sudo apt update
-    printf "${YELLOW}Uninstalling packages with apt...${NC}\n"
-    for package in "$@"; do
-        printf "${YELLOW}Uninstalling %s...${NC}\n" "$package"
-        sudo apt remove -y "$package"
-    done
-    printf "${GREEN}All packages uninstalled successfully.${NC}\n"
+	# Update package lists
+	printf "${YELLOW}Updating package lists...${NC}\n"
+	sudo apt update
+	printf "${YELLOW}Uninstalling packages with apt...${NC}\n"
+	for package in "$@"; do
+		printf "${YELLOW}Uninstalling %s...${NC}\n" "$package"
+		sudo apt remove -y "$package"
+	done
+	printf "${GREEN}All packages uninstalled successfully.${NC}\n"
 }
 
 # List of packages to uninstall

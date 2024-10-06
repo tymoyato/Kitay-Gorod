@@ -18,9 +18,9 @@
 
 check_sudo
 
-if ! command -v yq &> /dev/null; then
-    sudo apt-get update
-    sudo apt-get install -y yq
+if ! command -v yq &>/dev/null; then
+	sudo apt-get update
+	sudo apt-get install -y yq
 fi
 # Extract the JSON array using yq
 apt_packages_core_json=$(yq '.apt.core' ./linux/packages.yml)
