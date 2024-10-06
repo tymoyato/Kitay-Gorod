@@ -2,6 +2,8 @@ wget https://github.com/tymoyato/tmp/archive/refs/heads/main.zip
 
 unzip main.zip
 
+rm -f main.zip
+
 mv tmp-main tmp
 
 cd tmp
