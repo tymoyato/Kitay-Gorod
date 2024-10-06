@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ANSI color codes
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m' # No Color
+export GREEN='\033[0;32m'
+export YELLOW='\033[1;33m'
+export RED='\033[0;31m'
+export NC='\033[0m' # No Color

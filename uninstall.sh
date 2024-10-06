@@ -35,14 +35,14 @@ echo "Directories removed successfully."
 # Function to uninstall packages with apt
 uninstall_packages_with_apt() {
 	# Update package lists
-	printf "${YELLOW}Updating package lists...${NC}\n"
+	printf '%sUpdating package lists%s\n' "${YELLOW}" "${NC}"
 	sudo apt update
-	printf "${YELLOW}Uninstalling packages with apt...${NC}\n"
+	printf '%sUninstalling packages with apt...%s\n' "${YELLOW}" "${NC}"
 	for package in "$@"; do
 		printf "${YELLOW}Uninstalling %s...${NC}\n" "$package"
 		sudo apt remove -y "$package"
 	done
-	printf "${GREEN}All packages uninstalled successfully.${NC}\n"
+	printf '%sAll packages uninstalled successfully.%s\n' "${GREEN}" "${NC}"
 }
 
 # List of packages to uninstall

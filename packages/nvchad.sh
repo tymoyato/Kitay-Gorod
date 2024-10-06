@@ -2,16 +2,16 @@
 
 install_nvchad() {
 	check_git
-	printf "${YELLOW}Installing nvchad...${NC}\n"
+	printf '%sInstalling nvchad...%s\n' "${YELLOW}" "${NC}"
 	# Define the directory path
 	nvim_config_dir="$HOME/.config/nvim"
 
 	# Check if the directory exists
 	if [ -d "$nvim_config_dir" ]; then
-		printf "${RED}The directory $nvim_config_dir already exists.${NC}\n"
+		printf '%sThe directory %s already exists.%s\n' "${RED}" "$nvim_config_dir" "${NC}"
 	else
-		printf "${YELLOW}The directory $nvim_config_dir does not exist. Cloning the repository...${NC}\n"
+		printf '%sThe directory %s does not exist. Cloning the repository...%s\n' "${YELLOW}" "$nvim_config_dir" "${NC}"
 		git clone https://github.com/NvChad/starter "$nvim_config_dir"
-		printf "${GREEN}Repository cloned successfully.${NC}\n"
+		printf '%sRepository cloned successfully.%s\n' "${GREEN}" "${NC}"
 	fi
 }

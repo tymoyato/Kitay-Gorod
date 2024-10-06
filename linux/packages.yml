@@ -6,6 +6,8 @@ apt:
   essential:
     - brave-browser
     - zlib1g-dev
+    - shellcheck
+    - shfmt
 brew:
   - rbenv
   - nvm

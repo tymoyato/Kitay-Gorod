@@ -1,28 +1,28 @@
 #!/bin/bash
 
 check_sudo() {
-	printf "${YELLOW}Checking if the user has sudo privileges...${NC}\n"
+	printf '%sChecking if the user has sudo privileges...%s\n' "${YELLOW}" "${NC}"
 
 	# Check if the user has sudo privileges
 	if ! sudo -n true 2>/dev/null; then
-		printf "${YELLOW}User does not have sudo privileges. Adding user to sudoers...${NC}\n"
+		printf '%sUser does not have sudo privileges. Adding user to sudoers...%s\n' "${YELLOW}" "${NC}"
 
 		if [[ "$OS" == "Linux" ]]; then
 			sudo_user=$(whoami)
 			sudo_command="echo '$sudo_user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers"
 
 			# Add the user to sudoers
-			printf "${YELLOW}enter superuser password${NC}\n"
+			printf '%senter superuser password%s\n' "${YELLOW}" "${NC}"
 			if ! su -c "$sudo_command"; then
-				printf "${RED}Failed to add user to sudoers.${NC}\n"
+				printf '%sFailed to add user to sudoers.%s\n' "${RED}" "${NC}"
 				return 1
 			fi
 		else
-			printf "${RED}Unsupported operating system for adding sudo privileges: ${OS}${NC}\n"
+			printf '%sUnsupported operating system for adding sudo privileges: %s%s\n' "${RED}" "${OS}" "${NC}"
 			return 1
 		fi
 	else
-		printf "${GREEN}User has sudo privileges.${NC}\n"
+		printf '%sUser has sudo privileges.%s\n' "${GREEN}" "${NC}"
 	fi
 
 	return 0

@@ -14,7 +14,7 @@ setup_configs() {
 
 	# Remove existing configurations
 	for config in "${configs[@]}"; do
-		rm -rf "$config_dir/$config"
+		rm -rf "${config_dir:?}/${config:?}"
 	done
 
 	# Create symbolic links

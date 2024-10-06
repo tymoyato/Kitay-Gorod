@@ -1,13 +1,13 @@
 #!/bin/bash
 
 source_fish() {
-	printf "${YELLOW}add fish shell...${NC}\n"
+	printf '%sAdd fish shell...%s\n' "${YELLOW}" "${NC}"
 	sudo add-shell /home/linuxbrew/.linuxbrew/bin/fish
 	check_command "sudo add-shell /home/linuxbrew/.linuxbrew/bin/fish"
 
-	printf "${YELLOW}set fish shell default...${NC}\n"
+	printf '%sSet fish shell default...%s\n' "${YELLOW}" "${NC}"
 	chsh -s /home/linuxbrew/.linuxbrew/bin/fish
 	check_command "chsh -s /home/linuxbrew/.linuxbrew/bin/fish"
 
-	printf "${GREEN}All commands succeeded.${NC}\n"
+	printf '%sAll commands succeeded.%s\n' "${GREEN}" "${NC}"
 }
