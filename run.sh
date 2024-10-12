@@ -8,7 +8,7 @@ rm -f main.zip
 
 mv Kitay-Gorod-main Kitay-Gorod
 
-if ! cd tmp; then
+if ! cd Kitay-Gorod; then
 	echo "Error: Failed to change directory to tmp"
 	exit 1
 fi
