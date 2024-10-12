@@ -2,7 +2,7 @@
 
 setup_configs() {
 	local config_dir="$HOME/.config"
-	local repo_dir="$HOME/Kitay_Gorod/dotfiles"
+	local repo_dir="$HOME/Kitay-Gorod/dotfiles"
 
 	# List of configuration directories and files
 	local configs=(
