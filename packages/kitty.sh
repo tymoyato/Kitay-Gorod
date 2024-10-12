@@ -46,5 +46,5 @@ install_kitty() {
 	fi
 
 	print_message "kitty installed successfully." "success"
-	exit 0
+	return 0
 }
