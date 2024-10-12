@@ -11,7 +11,7 @@ install_packages_with_brew() {
 
 	for package in "${packages[@]}"; do
 		print_message "Installing ${package}" "instruction"
-		brew install "$package"
+		brew install --quiet "$package"
 	done
 
 	print_message "All packages installed successfully." "success"
