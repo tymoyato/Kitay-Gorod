@@ -6,7 +6,7 @@ unzip main.zip
 
 rm -f main.zip
 
-mv tmp-main tmp
+mv Kitay-Gorod-main Kitay-Gorod
 
 if ! cd tmp; then
 	echo "Error: Failed to change directory to tmp"
