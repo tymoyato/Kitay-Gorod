@@ -11,7 +11,7 @@ install_packages_with_apt() {
 
 	for package in "${packages[@]}"; do
 		print_message "Installing ${package}..." "instruction"
-		sudo apt install -y "$package"
+		sudo apt install -qq -y "$package"
 	done
 
 	print_message "All packages installed successfully." "success"
