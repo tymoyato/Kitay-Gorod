@@ -1,6 +1,7 @@
 # Kitay Gorod
 
 A repository for automating software installation with apt and brew package managers, along with setting up personalized dotfiles for streamlined development environments.
+Supported on linux (ubuntu, debian)
 
 ## Run this command
 
