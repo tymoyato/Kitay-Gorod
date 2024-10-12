@@ -15,15 +15,15 @@ check_sudo() {
 			print_message "Enter superuser password" "instruction"
 			if ! su -c "$sudo_command"; then
 				print_message "Failed to add user to sudoers." "fail"
-				return 1
+				exit 1
 			fi
 		else
 			print_message "Unsupported operating system for adding sudo privileges: ${OS}" "fail"
-			return 1
+			exit 1
 		fi
 	else
 		print_message "User has sudo privileges." "success"
 	fi
 
-	return 0
+	exit 0
 }
