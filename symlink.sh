@@ -2,7 +2,7 @@
 
 setup_configs() {
 	local config_dir="$HOME/.config"
-	local tmp_dir="$HOME/tmp/dotfiles"
+	local repo_dir="$HOME/Kitay_Gorod/dotfiles"
 
 	# List of configuration directories and files
 	local configs=(
@@ -19,7 +19,7 @@ setup_configs() {
 
 	# Create symbolic links
 	for config in "${configs[@]}"; do
-		ln -sf "$tmp_dir/$config" "$config_dir/$config"
+		ln -sf "$repo_dir/$config" "$config_dir/$config"
 	done
 
 	echo "Configurations have been set up."
