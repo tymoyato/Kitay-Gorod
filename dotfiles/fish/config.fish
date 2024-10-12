@@ -2,6 +2,8 @@ set fish_greeting ""
 
 set -gx TERM xterm-256color
 set -Ux fish_user_paths /home/linuxbrew/.linuxbrew/bin $fish_user_paths
+set -x GVM_ROOT $HOME/.gvm
+set -x PATH $GVM_ROOT/bin $PATH
 
 # aliases
 alias g git
