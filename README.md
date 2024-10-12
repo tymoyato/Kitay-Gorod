@@ -5,7 +5,7 @@ Supported on linux (ubuntu, debian)
 
 ## Run this command
 
-This will clone the repo to the current path you enter
+This will clone the repo to the current pat
 
 ```bash
   bash -i <(wget -qO- https://raw.githubusercontent.com/tymoyato/tmp/main/run.sh)
