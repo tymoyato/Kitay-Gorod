@@ -19,6 +19,8 @@ chmod +x ./setup.fish
 
 chmod +x ./symlink.sh
 
+chmod +x ./devtools/git.sh
+
 time (
 
 	bash -i linux_setup.sh
