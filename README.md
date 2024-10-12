@@ -8,7 +8,7 @@ Supported on linux (ubuntu, debian)
 This will clone the repo to the current path
 
 ```bash
-  bash -i <(wget -qO- https://raw.githubusercontent.com/tymoyato/tmp/main/run.sh)
+bash -i <(wget -qO- https://raw.githubusercontent.com/tymoyato/tmp/main/run.sh)
 ```
 
 Password will be asked for (packages manager, default shell setup)
