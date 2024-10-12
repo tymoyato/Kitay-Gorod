@@ -27,3 +27,4 @@ setup_configs() {
 
 # Call the function
 setup_configs
+exec fish
