@@ -25,5 +25,5 @@ check_sudo() {
 		print_message "User has sudo privileges." "success"
 	fi
 
-	exit 0
+	return 0
 }
