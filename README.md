@@ -10,4 +10,4 @@ This will clone the repo to the current path you enter
   bash -i <(wget -qO- https://raw.githubusercontent.com/tymoyato/tmp/main/run.sh)
 ```
 
-Password will be asked for (packages manager, setup default shell)
+Password will be asked for (packages manager, default shell setup)
