@@ -2,7 +2,7 @@
 
 install_gvm() {
 	check_curl
-	printf '%sInstalling gvm...%s\n' "${YELLOW}" "${NC}"
+	print_message "Installing gvm..." "instruction"
 	bash < <(curl -sSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-	printf '%sgvm installed successfully.%s\n' "${GREEN}" "${NC}"
+	print_message "gvm installed successfully." "success"
 }

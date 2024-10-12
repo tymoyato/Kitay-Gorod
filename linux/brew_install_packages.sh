@@ -4,15 +4,15 @@ install_packages_with_brew() {
 	local packages=("$@")
 
 	# Update package lists
-	printf '%sUpdating package lists...%s\n' "$YELLOW" "$NC"
+	print_message "Updating package lists..." "instruction"
 	brew update
 
-	printf '%sInstalling packages with Homebrew...%s\n' "$YELLOW" "$NC"
+	print_message "Installing packages with Homebrew..." "instruction"
 
 	for package in "${packages[@]}"; do
-		printf "${YELLOW}Installing %s...${NC}\n" "$package"
+		print_message "Installing ${package}" "instruction"
 		brew install "$package"
 	done
 
-	printf '%sAll packages installed successfully.%s\n' "$GREEN" "$NC"
+	print_message "All packages installed successfully." "success"
 }

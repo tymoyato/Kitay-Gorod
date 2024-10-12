@@ -4,15 +4,15 @@ install_packages_with_apt() {
 	local packages=("$@")
 
 	# Update package lists
-	printf '%sUpdating package lists...%s\n' "$YELLOW" "$NC"
+	print_message "Updating package lists..." "instruction"
 	sudo apt update
 
-	printf '%sInstalling packages with apt...%s\n' "$YELLOW" "$NC"
+	print_message "Installing packages with apt..." "instruction"
 
 	for package in "${packages[@]}"; do
-		printf "${YELLOW}Installing %s...${NC}\n" "$package"
+		print_message "Installing ${package}..." "instruction"
 		sudo apt install -y "$package"
 	done
 
-	printf '%sAll packages installed successfully.%s\n' "$GREEN" "$NC"
+	print_message "All packages installed successfully." "success"
 }

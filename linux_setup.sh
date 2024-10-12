@@ -28,12 +28,12 @@ apt_packages_essential_json=$(yq '.apt.essential' ./linux/packages.yml)
 brew_packages_json=$(yq '.brew' ./linux/packages.yml)
 
 # Convert the JSON array to a Bash array using jq
-read -a -r apt_packages_core <<<"$(echo "$apt_packages_core_json" | jq -r '.[]')"
+read -a apt_packages_core <<<"$(echo "$apt_packages_core_json" | jq -r '. | join(" ")')"
 install_packages_with_apt "${apt_packages_core[@]}"
 
-# Add sources of packages
+# # Add sources of packages
 source_brave
-read -a -r apt_packages_essential <<<"$(echo "$apt_packages_essential_json" | jq -r '.[]')"
+read -a apt_packages_essential <<<"$(echo "$apt_packages_essential_json" | jq -r '. | join(" ")')"
 install_packages_with_apt "${apt_packages_essential[@]}"
 
 install_packages
@@ -43,9 +43,9 @@ BASHRC_PATH=$(realpath ~/.bashrc)
 source "$BASHRC_PATH"
 
 
-read -a -r brew_packages <<<"$(echo "$brew_packages_json" | jq -r '.[]')"
+read -a brew_packages <<<"$(echo "$brew_packages_json" | jq -r '. | join(" ")')"
 install_packages_with_brew "${brew_packages[@]}"
 
 source_fish
 
-printf '%sAll installations completed.%s\n' "${GREEN}" "${NC}"
+print_message "All installations completed." "success"
