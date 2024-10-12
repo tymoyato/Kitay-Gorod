@@ -13,6 +13,18 @@ bash -i <(wget -qO- https://raw.githubusercontent.com/tymoyato/tmp/main/run.sh)
 
 Password will be asked for (packages manager, default shell setup)
 
+It will logout from session next create symlinks 
+
+```bash
+./symlink.sh
+```
+
+Setup fish shell (run in fish shell)
+
+```bash
+./setup.fish
+```
+
 ## Git setup
 
 Add git remote, edit `./.devtools/git.yml`
