@@ -8,6 +8,7 @@ apt:
     - zlib1g-dev
     - shellcheck
     - shfmt
+    - awesome
 brew:
   - rbenv
   - nvm
