@@ -9,6 +9,7 @@ setup_configs() {
 		"fish"
 		"kitty"
 		"nvim"
+                "awesome"
 		#"BraveSoftware/Brave-Browser/Default/Preferences"
 	)
 
