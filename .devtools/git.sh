@@ -13,6 +13,8 @@ setup_git() {
 
     git config --global user.email "$git_email"
     git config --global user.name "$git_name"
+
+    ssh-keygen -t rsa -b 4096 -C "$git_email" -f ~/.ssh/id_rsa -N ""
 }
 
 setup_git
