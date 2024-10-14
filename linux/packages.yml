@@ -3,6 +3,11 @@ apt:
     - build-essential
     - git
     - curl
+    - mercurial
+    - make
+    - binutils
+    - gcc
+    - bison
   essential:
     - brave-browser
     - zlib1g-dev
@@ -27,4 +32,3 @@ brew:
   - nvim
   - unzip
   - zellij
-  - bison
