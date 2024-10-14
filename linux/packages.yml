@@ -32,3 +32,4 @@ brew:
   - nvim
   - unzip
   - zellij
+  - go
