@@ -5,7 +5,7 @@ conform = {
     lua = { "stylua" },
     eruby = { "erb_format" },
     sql = { "sql_formatter" },
-    javascript = { { "prettierd", "prettier" } },
+    javascript = { "prettierd", "prettier", stop_after_first = true },
     css = { "prettier" },
     html = { "prettier" },
   },
