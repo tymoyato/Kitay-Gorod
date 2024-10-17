@@ -16,13 +16,13 @@ Password will be asked for (packages manager, default shell setup)
 It will logout from session next create symlinks 
 
 ```bash
-./symlink.sh
+bash symlink.sh
 ```
 
 Setup fish shell (run in fish shell)
 
 ```bash
-./setup.fish
+fish setup.fish
 ```
 
 ## Git setup
