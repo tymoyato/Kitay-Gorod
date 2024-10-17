@@ -37,5 +37,5 @@ Add git remote, edit `./.devtools/git.yml`
 ```
 Run
 ```bash
-./.devtools/git.sh
+bash .devtools/git.sh
 ```
