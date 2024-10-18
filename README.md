@@ -16,7 +16,7 @@ Password will be asked for (packages manager, default shell setup)
 It will logout from session next create symlinks 
 
 ```bash
-bash symlink.sh
+bash -i symlink.sh
 ```
 
 Setup fish shell (run in fish shell)
