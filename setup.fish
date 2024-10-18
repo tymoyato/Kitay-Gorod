@@ -8,5 +8,6 @@ gem install bundler
 nvm install latest
 nvm use latest
 gvm install go1.23.2
+npm install --global yarn
 
 exec fish
