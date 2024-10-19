@@ -7,7 +7,7 @@ local M = {}
 M.base46 = {
 	theme = "monekai",
 	transparancy = true,
-	theme_toggle = { "monekar", "everforest" },
+	theme_toggle = { "monekai", "everforest" },
 }
 
 return M
