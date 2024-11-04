@@ -9,8 +9,9 @@ setup_configs() {
 		"fish"
 		"kitty"
 		"nvim"
-    "awesome"
-    "picom"
+    		"awesome"
+    		"picom"
+      		"rofi"
 		#"BraveSoftware/Brave-Browser/Default/Preferences"
 	)
 
