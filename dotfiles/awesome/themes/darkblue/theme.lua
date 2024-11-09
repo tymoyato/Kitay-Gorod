@@ -11,8 +11,8 @@ theme.font                                      = "Meslo LGS Regular 10"
 theme.taglist_font                              = "Meslo LGS Bold 10"
 theme.tasklist_font                             = "Terminus 10"
 
-theme.bg_normal                                 = "#000000" --icon
-theme.fg_normal                                 = "#ffffff" -- digit date
+theme.bg_normal                                 = "#000000"
+theme.fg_normal                                 = "#ffffff"
 theme.bg_focus                                  = "#32302f"
 theme.fg_focus                                  = "#232323"
 theme.bg_urgent                                 = "#C92132"
@@ -63,7 +63,7 @@ theme.notification_margin                       = 30
 --theme.notification_height                       = 200
 
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
---theme.awesome_icon                              = theme.dir .. "/icons/awesome.png"
+-- theme.awesome_icon                              = theme.dir .. "/icons/awesome.png"
 
 -- Layout icons
 theme.layout_tile                               = theme.dir .. "/icons/layouts/tile.png"
@@ -106,7 +106,7 @@ theme.widget_vol_mute                           = theme.dir .. "/icons/widgets/v
 
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
-theme.useless_gap                               = 7
+theme.useless_gap                               = 6
 
 theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
 
@@ -133,14 +133,6 @@ theme.titlebar_maximized_button_focus_active    = theme.dir .. "/icons/titlebar/
 
 theme.titlebar_maximized_button_focus_inactive  = theme.dir .. "/icons/titlebar/maximized_focus_inactive.png"
 --theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/maximized_normal_inactive.png"
-
--- Application icons
-theme.chrome                                    = theme.dir .. "/icons/apps/chrome.png"
-theme.webstorm                                  = theme.dir .. "/icons/apps/webstorm.png"
-theme.idea                                      = theme.dir .. "/icons/apps/idea.png"
-theme.pycharm                                   = theme.dir .. "/icons/apps/pycharm.png"
-theme.teamviewer                                = theme.dir .. "/icons/apps/teamviewer.png"
-theme.vivaldi                                   = theme.dir .. "/icons/apps/vivaldi.png"
 
 -- colors
 theme.green          = "#00b159"
@@ -478,7 +470,7 @@ function theme.connect(s)
     -- Tags
     --awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
     layout = { awful.layout.layouts[1], awful.layout.layouts[1], awful.layout.layouts[1], awful.layout.layouts[3], awful.layout.layouts[3], awful.layout.layouts[5]}
-    awful.tag({ " </> ", " >_ ", " web ", " & ", " etc ", " # " }, s, layout)
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, layout)
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -517,7 +509,7 @@ function theme.connect(s)
         nil,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
+            -- wibox.widget.systray(),
             -- Keyboard
             w1,
             kbd_widget,
