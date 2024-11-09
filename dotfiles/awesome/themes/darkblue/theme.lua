@@ -63,7 +63,7 @@ theme.notification_margin                       = 30
 --theme.notification_height                       = 200
 
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
-theme.awesome_icon                              = theme.dir .. "/icons/awesome.png"
+--theme.awesome_icon                              = theme.dir .. "/icons/awesome.png"
 
 -- Layout icons
 theme.layout_tile                               = theme.dir .. "/icons/layouts/tile.png"
