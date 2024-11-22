@@ -39,9 +39,8 @@ Run
 ```bash
 bash .devtools/git.sh
 ```
-## AwesomeWM
 
-# Awesome WM v4.3
+## Awesome WM v4.3
 
 ## Build Information
 
