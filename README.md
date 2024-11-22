@@ -39,3 +39,15 @@ Run
 ```bash
 bash .devtools/git.sh
 ```
+## AwesomeWM
+
+# Awesome WM v4.3
+
+## Build Information
+
+- **Compiled against Lua**: 5.3.6
+- **Running with Lua**: 5.3
+- **D-Bus support**: ✔
+- **execinfo support**: ✔
+- **xcb-randr version**: 1.6
+- **LGI version**: 0.9.2
