@@ -18,6 +18,7 @@ apt:
     - kbdd
     - rofi
     - picom
+    - xclip
 brew:
   - rbenv
   - nvm
