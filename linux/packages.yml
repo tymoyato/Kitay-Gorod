@@ -19,6 +19,7 @@ apt:
     - rofi
     - picom
     - xclip
+    - flameshot
 brew:
   - rbenv
   - nvm
