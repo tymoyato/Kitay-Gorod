@@ -22,7 +22,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Variable definitions
 -- Set false to disable titlebar
 -- local window_titlebar = true  
--- local modkey       = "Mod4"
+-- local MODKEY       = "Mod4"
 -- local altkey       = "Mod1"
 
 -- Naughty presets
@@ -61,7 +61,7 @@ end)
 awful.screen.connect_for_each_screen(function(s) beautiful.connect(s) end)
 
 -- Key bindings
-globalkeys = awful.util.table.join(
+GLOBALKEYS = awful.util.table.join(
     -- Default client focus
     awful.key({ altkey,           }, "j",
         function ()
@@ -77,11 +77,11 @@ globalkeys = awful.util.table.join(
     ),
     -- Programms
     -- awful.key({                   }, "XF86Launch1", function()  awful.util.spawn("subl3") end),
-    -- awful.key({ modkey            }, "v", function() awful.util.spawn_with_shell("vivaldi-snapshot") end ),
-    -- awful.key({ modkey            }, "t", function() awful.util.spawn_with_shell("caja") end ),
-    -- awful.key({ modkey            }, "r", function() awful.util.spawn('urxvt -e ranger') end ),
+    -- awful.key({ MODKEY            }, "v", function() awful.util.spawn_with_shell("vivaldi-snapshot") end ),
+    -- awful.key({ MODKEY            }, "t", function() awful.util.spawn_with_shell("caja") end ),
+    -- awful.key({ MODKEY            }, "r", function() awful.util.spawn('urxvt -e ranger') end ),
     -- awful.key({                   }, "F11", function() awful.util.spawn('qpaeq') end ),
-    -- --awful.key({ modkey            }, "l", function() awful.util.spawn_with_shell("~/.config/scripts/lock.sh") end),
+    -- --awful.key({ MODKEY            }, "l", function() awful.util.spawn_with_shell("~/.config/scripts/lock.sh") end),
     -- awful.key({                   }, "Print", function() awful.util.spawn("scrot -e 'mv %f ~/screenshots/'") end),
     -- --awful.key({ }, "F4", function () scratch.drop("weechat", "bottom", "left", 0.60, 0.60, true, mouse.screen) end),
     -- --awful.key({ }, "F6", function () scratch.drop("smuxi-frontend-gnome", "bottom", "left", 0.60, 0.60, true, mouse.screen) end),
@@ -89,7 +89,7 @@ globalkeys = awful.util.table.join(
     -- awful.key({ }, "F3", function () scratch.drop("urxvt -e ranger", "center", "center", 0.75, 0.7, true, mouse.screen) end),
     -- awful.key({ }, "F12", function () awful.util.spawn_with_shell("~/.config/scripts/translate_new.sh \"".. translate_service.. "\"",false) end),
 
-    -- awful.key({ modkey, "Control" }, "n",
+    -- awful.key({ MODKEY, "Control" }, "n",
     --           function ()
     --               local c = awful.client.restore()
     --               -- Focus restored client
@@ -101,7 +101,7 @@ globalkeys = awful.util.table.join(
     --           {description = "restore minimized", group = "client"}),
 
     -- -- Dropdown application
-    -- awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end,
+    -- awful.key({ MODKEY, }, "z", function () awful.screen.focused().quake:toggle() end,
     --           {description = "dropdown application", group = "launcher"}),
 
     -- -- Widgets popups
@@ -189,12 +189,12 @@ globalkeys = awful.util.table.join(
     --     end,
     --     {description = "mpc on/off", group = "widgets"}),
 
-    -- Copy primary to clipboard (terminals to gtk)
-    -- awful.key({ modkey }, "c", function () awful.spawn("xsel | xsel -i -b") end,
-    --           {description = "copy terminal to gtk", group = "hotkeys"}),
-    -- Copy clipboard to primary (gtk to terminals)
+    -- Copy primary to clipboard (TERMINALs to gtk)
+    -- awful.key({ MODKEY }, "c", function () awful.spawn("xsel | xsel -i -b") end,
+    --           {description = "copy TERMINAL to gtk", group = "hotkeys"}),
+    -- Copy clipboard to primary (gtk to TERMINALs)
     -- awful.key({ altkey }, "v", function () awful.spawn("xsel -b | xsel") end,
-    --           {description = "copy gtk to terminal", group = "hotkeys"}),
+    --           {description = "copy gtk to TERMINAL", group = "hotkeys"}),
 
 -- Set keys
-root.keys(globalkeys)
+root.keys(GLOBALKEYS)
