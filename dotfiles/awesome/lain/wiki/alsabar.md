@@ -74,7 +74,7 @@ If you want buttons, just add the following after your widget in `rc.lua`.
 ```lua
 volume.bar:buttons(awful.util.table.join(
     awful.button({}, 1, function() -- left click
-        awful.spawn(string.format("%s -e alsamixer", terminal))
+        awful.spawn(string.format("%s -e alsamixer", TERMINAL))
     end),
     awful.button({}, 2, function() -- middle click
         awful.spawn(string.format("%s set %s 100%%", volume.cmd, volume.channel))

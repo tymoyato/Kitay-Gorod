@@ -26,7 +26,7 @@ With multiple screens, the default behaviour is to show a visual notification po
 You can call the notification with a keybinding like this:
 
 ```lua
-awful.key({ modkey, altkey }, "t", function () lain.widget.contrib.task.show(scr) end),
+awful.key({ MODKEY, altkey }, "t", function () lain.widget.contrib.task.show(scr) end),
 ```
 
 where ``altkey = "Mod1"`` and `scr` (optional) indicates the screen which you want the notification in.

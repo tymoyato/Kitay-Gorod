@@ -179,24 +179,24 @@ Thus, use of `awful.client.focus.bydirection()` is suggested.
 Here's an example:
 
 ```lua
-globalkeys = awful.util.table.join(
+GLOBALKEYS = awful.util.table.join(
     -- [...]
-    awful.key({ modkey }, "j",
+    awful.key({ MODKEY }, "j",
         function()
             awful.client.focus.bydirection("down")
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey }, "k",
+    awful.key({ MODKEY }, "k",
         function()
             awful.client.focus.bydirection("up")
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey }, "h",
+    awful.key({ MODKEY }, "h",
         function()
             awful.client.focus.bydirection("left")
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey }, "l",
+    awful.key({ MODKEY }, "l",
         function()
             awful.client.focus.bydirection("right")
             if client.focus then client.focus:raise() end

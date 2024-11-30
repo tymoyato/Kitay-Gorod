@@ -24,12 +24,12 @@ awful.screen.connect_for_each_screen(function(s)
 
 If using a global instance:
 ```lua
-awful.key({ modkey, }, "z", function () quake:toggle() end),
+awful.key({ MODKEY, }, "z", function () quake:toggle() end),
 ```
 
 If using a per-screen instance:
 ```lua
-awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end),
+awful.key({ MODKEY, }, "z", function () awful.screen.focused().quake:toggle() end),
 ```
 
 **Input table**
@@ -64,7 +64,7 @@ Read [here](https://awesomewm.org/doc/api/classes/client.html#Object_properties)
 
 **Notes**
 
-* [Does not work](https://github.com/lcpz/lain/issues/358) with `gnome-terminal`, `konsole`, or any other terminal which is strictly designed for a Desktop Environment. Just pick a better terminal, [there's plenty](https://wiki.archlinux.org/index.php/List_of_applications#Terminal_emulators).
+* [Does not work](https://github.com/lcpz/lain/issues/358) with `gnome-terminal`, `konsole`, or any other terminal which is strictly designed for a Desktop Environment. Just pick a better terminal, [there's plenty](https://wiki.archlinux.org/index.php/List_of_applications#terminal).
 * Set `followtag = true` if [experiencing issues with multiple screens](https://github.com/lcpz/lain/issues/346).
 * If you have a `awful.client.setslave` rule for your application, ensure you use an exception for `QuakeDD` (or your defined `name`). Otherwise, you may run into problems with focus.
 * If you are using a VTE-based terminal like `termite`, be sure to set [`argname = "--name %s"`](https://github.com/lcpz/lain/issues/211).
@@ -156,11 +156,11 @@ If you delete a tag, any rule set on it shall be broken, so be careful.
 Use it with key bindings like these:
 
 ```lua
-awful.key({ modkey, "Shift" }, "n", function () lain.util.add_tag(mylayout) end),
-awful.key({ modkey, "Shift" }, "r", function () lain.util.rename_tag() end),
-awful.key({ modkey, "Shift" }, "Left", function () lain.util.move_tag(1) end),   -- move to next tag
-awful.key({ modkey, "Shift" }, "Right", function () lain.util.move_tag(-1) end), -- move to previous tag
-awful.key({ modkey, "Shift" }, "d", function () lain.util.delete_tag() end),
+awful.key({ MODKEY, "Shift" }, "n", function () lain.util.add_tag(mylayout) end),
+awful.key({ MODKEY, "Shift" }, "r", function () lain.util.rename_tag() end),
+awful.key({ MODKEY, "Shift" }, "Left", function () lain.util.move_tag(1) end),   -- move to next tag
+awful.key({ MODKEY, "Shift" }, "Right", function () lain.util.move_tag(-1) end), -- move to previous tag
+awful.key({ MODKEY, "Shift" }, "d", function () lain.util.delete_tag() end),
 ```
 
 The argument in `lain.util.add_tag` represents the tag layout, and is optional: if not present, it will be defaulted to `awful.layout.suit.tile`.
@@ -221,9 +221,9 @@ position). This allows you to magnify any client you wish, regardless of
 the currently used layout. Use it with a client keybinding like this:
 
 ```lua
-clientkeys = awful.util.table.join(
+CLIENTKEYS = awful.util.table.join(
     -- [...]
-    awful.key({ modkey, "Control" }, "m", lain.util.magnify_client),
+    awful.key({ MODKEY, "Control" }, "m", lain.util.magnify_client),
     -- [...]
 )
 ```
