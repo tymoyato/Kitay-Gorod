@@ -9,9 +9,9 @@
 --     local scratch = require("scratch")
 -- to the top of your rc.lua, and call:
 --     scratch.pad.set(c, width, height, sticky, screen)
--- from a clientkeys binding, and:
+-- from a CLIENTKEYS binding, and:
 --     scratch.pad.toggle(screen)
--- from a globalkeys binding.
+-- from a GLOBALKEYS binding.
 --
 -- Parameters:
 --     c      - Client to scratch or un-scratch
