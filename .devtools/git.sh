@@ -18,6 +18,9 @@ setup_git() {
     ssh-keygen -t rsa -b 4096 -C "$git_email" -f ~/.ssh/id_rsa -N ""
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
+
+    ssh -T git@github.com
+    git config --list
 }
 
 setup_git
