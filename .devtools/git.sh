@@ -3,7 +3,6 @@
 setup_git() {
     git_name=$(yq '.git.user.name' ./.devtools/git.yml | tr -d '"')
     git_email=$(yq '.git.user.email' ./.devtools/git.yml | tr -d '"')
-
     if [ ! -d ".git" ]; then
         git init
         git remote add origin https://github.com/tymoyato/Kitay-Gorod.git
