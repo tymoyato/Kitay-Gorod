@@ -16,13 +16,13 @@ Password will be asked for (packages manager, default shell setup)
 It will logout from session next create symlinks 
 
 ```bash
-bash -i symlink.sh
+bash -i .Kitay-Gorod/symlink.sh
 ```
 
 Setup fish shell (run in fish shell)
 
 ```bash
-fish setup.fish
+fish .Kitay-Gorod/setup.fish
 ```
 
 ## Git setup
@@ -37,7 +37,7 @@ Add git remote, edit `./.devtools/git.yml`
 ```
 Run
 ```bash
-bash .devtools/git.sh
+bash .Kitay-Gorod/.devtools/git.sh
 ```
 
 ## Awesome WM v4.3
