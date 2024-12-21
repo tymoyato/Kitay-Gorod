@@ -92,7 +92,7 @@ lain.layout.cascade.tile.ncol = 2
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 local themes = {
-	"darkblue",
+	"mountain",
 }
 local i3lock_settings = "i3lock-fancy"
 local chosen_theme = themes[1]

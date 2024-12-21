@@ -5,37 +5,53 @@
 
 --]]
 
-local helpers  = require("lain.helpers")
-local wibox    = require("wibox")
-local open     = io.open
+local helpers = require("lain.helpers")
+local wibox = require("wibox")
+local open = io.open
 local tonumber = tonumber
 
 -- coretemp
 -- lain.widget.temp
 
 local function factory(args)
-    local temp     = { widget = wibox.widget.textbox() }
-    local args     = args or {}
-    local timeout  = args.timeout or 2
-    local tempfile = args.tempfile or "/sys/class/thermal/thermal_zone0/temp"
-    local settings = args.settings or function() end
+	local temp = { widget = wibox.widget.textbox() }
+	local args = args or {}
+	local timeout = args.timeout or 2
+	local tempfiles = args.tempfiles
+		or {
+			"/sys/class/thermal/thermal_zone0/temp",
+			"/sys/class/hwmon/hwmon0/temp1_input",
+			"/sys/class/hwmon/hwmon1/temp1_input",
+		}
+	local settings = args.settings or function() end
+  CORETEMP_NOW = nil
 
-    function temp.update()
-        local f = open(tempfile)
-        if f then
-            coretemp_now = tonumber(f:read("*all")) / 1000
-            f:close()
-        else
-            coretemp_now = "N/A"
-        end
+	function temp.update()
+		for _, tempfile in ipairs(tempfiles) do
+			local f = open(tempfile)
+			if f then
+				CORETEMP_NOW = tonumber(f:read("*all")) / 1000
+				f:close()
+				if CORETEMP_NOW then
+					break
+				else
+					print("Error: Unable to read temperature data from " .. tempfile)
+				end
+			else
+				print("Error: Unable to open temperature file at " .. tempfile)
+			end
+		end
+		if CORETEMP_NOW == nil then
+			CORETEMP_NOW = "N/A"
+		end
 
-        widget = temp.widget
-        settings()
-    end
+		WIDGET = temp.widget
+		settings()
+	end
 
-    helpers.newtimer("coretemp", timeout, temp.update)
+	helpers.newtimer("coretemp", timeout, temp.update)
 
-    return temp
+	return temp
 end
 
 return factory
