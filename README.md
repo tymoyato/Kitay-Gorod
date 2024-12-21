@@ -43,7 +43,6 @@ bash .Kitay-Gorod/.devtools/git.sh
 
 ### mountain theme
 
-#### With compton and rofi
 ![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/mountain/screenshots/mountain-desktop.png)
 ---
 
