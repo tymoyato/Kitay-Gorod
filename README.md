@@ -39,6 +39,16 @@ Run
 ```bash
 bash .Kitay-Gorod/.devtools/git.sh
 ```
+## Screenshots
+
+### mountain theme
+
+#### With compton and rofi
+![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/mountain/screenshots/mountain-desktop.png)
+---
+
+![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/mountain/screenshots/mountain-nvim.png)
+---
 
 ## Awesome WM v4.3
 
