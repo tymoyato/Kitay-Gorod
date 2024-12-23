@@ -20,6 +20,7 @@ apt:
     - picom
     - xclip
     - flameshot
+    - wmctrl
 brew:
   - rbenv
   - nvm
