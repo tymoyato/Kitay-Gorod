@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://github.com/tymoyato/Kitay-Gorod/blob/314106ce655e48dcd0d0b1432d7c972aeb07d46f/kitay-gorod.jpg" alt="logo" width="400">
+  <img src="https://github.com/tymoyato/Kitay-Gorod/blob/314106ce655e48dcd0d0b1432d7c972aeb07d46f/kitay-gorod.jpg" alt="logo" width="300">
   <br>
   Kitay Gorod
   <br>
