@@ -21,6 +21,7 @@ apt:
     - xclip
     - flameshot
     - wmctrl
+    - xdotool
 brew:
   - rbenv
   - nvm
