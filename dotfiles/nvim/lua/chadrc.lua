@@ -5,7 +5,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "monekai",
+	theme = "everforest",
 	transparancy = true,
 	theme_toggle = { "monekai", "everforest" },
   integration = { "neogit", "lazygit", "diffview" },
