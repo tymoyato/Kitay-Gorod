@@ -311,10 +311,10 @@ GLOBALKEYS = gears.table.join(
 	awful.key({ MODKEY }, "o", function()
 		awful.spawn("flameshot gui")
 	end, { description = "start flameshot", group = "launcher" }),
-	awful.key({ altkey }, "Right", function()
+	awful.key({ altkey, "Shift" }, "Right", function()
 		lain.util.useless_gaps_resize(7)
 	end, { description = "increment useless gaps", group = "tag" }),
-	awful.key({ altkey }, "Left", function()
+	awful.key({ altkey, "Shift" }, "Left", function()
 		lain.util.useless_gaps_resize(-7)
 	end, { description = "decrement useless gaps", group = "tag" }),
 	-- Dynamic tagging
