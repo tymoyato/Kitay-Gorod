@@ -20,6 +20,7 @@ setup_git() {
 
     ssh -T git@github.com
     git config --list
+    git remote set-url origin git@github.com:tymoyato/Kitay-Gorod.git
 }
 
 setup_git
