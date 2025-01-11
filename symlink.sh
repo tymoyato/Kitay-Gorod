@@ -12,6 +12,7 @@ setup_configs() {
     		"awesome"
     		"picom"
       		"rofi"
+          "lazygit"
 		#"BraveSoftware/Brave-Browser/Default/Preferences"
 	)
 
