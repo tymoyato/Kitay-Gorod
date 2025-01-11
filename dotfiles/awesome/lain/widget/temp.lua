@@ -19,9 +19,7 @@ local function factory(args)
 	local timeout = args.timeout or 2
 	local tempfiles = args.tempfiles
 		or {
-			"/sys/class/thermal/thermal_zone0/temp",
-			"/sys/class/hwmon/hwmon0/temp1_input",
-			"/sys/class/hwmon/hwmon1/temp1_input",
+			"/sys/class/hwmon/hwmon9/temp1_input",
 		}
 	local settings = args.settings or function() end
   CORETEMP_NOW = nil
