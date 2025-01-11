@@ -200,13 +200,16 @@ root.buttons(gears.table.join(
 GLOBALKEYS = gears.table.join(
 	-- Show/Hide Wibox
 	awful.key({ MODKEY }, "b", function()
-		for s in screen do
-			s.mywibox.visible = not s.mywibox.visible
+		awful.screen.connect_for_each_screen(function(s)
+			if s.mywibox then
+				s.mywibox.visible = not s.mywibox.visible
+			end
 			if s.mybottomwibox then
 				s.mybottomwibox.visible = not s.mybottomwibox.visible
 			end
-		end
+		end)
 	end, { description = "toggle wibox", group = "awesome" }),
+
 	awful.key({ MODKEY, "Shift" }, "l", function()
 		awful.util.spawn(i3lock_settings)
 	end),
