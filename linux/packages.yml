@@ -22,7 +22,7 @@ apt:
     - flameshot
     - wmctrl
     - xdotool
-    - brightnessctl
+    - light #allow bin sudo
 brew:
   - rbenv
   - nvm
