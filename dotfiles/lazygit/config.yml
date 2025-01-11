@@ -2,11 +2,8 @@
 
 git:
  commitPrefix:
-    # pattern to match on. E.g. for 'feature/AB-123' to match on the AB-123 use "^\\w+\\/(\\w+-\\w+).*"
-    pattern: "^\\w+\\/(\\w+-\\d+).*"
-
-    # Replace directive. E.g. for 'feature/AB-123' to start the commit message with 'AB-123 ' use "[$1] "
-    replace: '$1: '
+    pattern: "^(\\w+)\\/(\\w+-\\w+).*"
+    replace: '$1(): [$2] '
 gui:
   scrollHeight: 10 # how many lines you scroll by
   scrollPastBottom: false # enable scrolling past the bottom
