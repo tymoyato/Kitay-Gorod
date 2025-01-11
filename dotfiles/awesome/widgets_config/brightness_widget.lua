@@ -79,7 +79,7 @@ brightness_bar:buttons(awful.util.table.join(
 	end)
 ))
 
-local brightnessbg = wibox.container.background(brightness_bar, "#888888", gears.shape.rectangle)
+local brightnessbg = wibox.container.background(brightness_bar, "#888888", gears.shape.rounded_rect)
 local brightness_widget = wibox.container.margin(brightnessbg, 2, 7, 4, 4)
 local brightness_final_widget = wibox.container.background(
 	wibox.container.margin(
@@ -87,7 +87,8 @@ local brightness_final_widget = wibox.container.background(
 		0,
 		0
 	),
-	theme.darkgreen
+	theme.darkgreen,
+  gears.shape.rounded_rect
 )
 
 return brightness_final_widget

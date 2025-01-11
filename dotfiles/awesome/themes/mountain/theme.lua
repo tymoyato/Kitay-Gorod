@@ -209,7 +209,7 @@ function theme.connect(s)
       brightness_widget,
 			volume_widget,
 			-- Net speed widget
-			wibox.container.background(net_speed_widget(), theme.yellow),
+			wibox.container.background(net_speed_widget(), theme.yellow, gears.shape.rounded_rect),
 			-- Temp
 			temp_widget,
 			-- CPU widget

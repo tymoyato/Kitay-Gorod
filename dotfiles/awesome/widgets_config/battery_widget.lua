@@ -138,11 +138,12 @@ local batbar = wibox.widget({
 	widget = wibox.widget.progressbar,
 })
 
-local batbg = wibox.container.background(batbar, "#474747", gears.shape.rectangle)
+local batbg = wibox.container.background(batbar, "#474747")
 local bat_widget = wibox.container.margin(batbg, 2, 7, 4, 4)
 local battery_widget1 = wibox.container.background(
 	wibox.container.margin(wibox.widget({ bat_icon, bat_widget, layout = wibox.layout.align.horizontal }), 1, 1),
-	theme.gray
+	theme.gray,
+  gears.shape.rounded_rect
 )
 local battery_widget2 = wibox.container.background(
 	wibox.container.margin(
@@ -150,7 +151,8 @@ local battery_widget2 = wibox.container.background(
 		0,
 		0
 	),
-	theme.gray
+	theme.gray,
+  gears.shape.rounded_rect
 )
 
 return {

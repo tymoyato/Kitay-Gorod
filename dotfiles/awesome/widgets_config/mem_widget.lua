@@ -2,6 +2,7 @@
 local wibox = require("wibox")
 local lain = require("lain")
 local markup = lain.util.markup
+local gears = require("gears")
 
 theme.widget_mem = theme.dir .. "/icons/widgets/mem.png"
 local mem_icon = wibox.widget.imagebox(theme.widget_mem)
@@ -17,7 +18,8 @@ local mem = lain.widget.mem({
 })
 local mem_widget = wibox.container.background(
 	wibox.container.margin(wibox.widget({ mem_icon, mem.widget, layout = wibox.layout.align.horizontal }), 0, 0),
-	theme.pink
+	theme.pink,
+  gears.shape.rounded_rect
 )
 
 return mem_widget

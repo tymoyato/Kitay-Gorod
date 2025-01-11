@@ -2,6 +2,7 @@
 local wibox = require("wibox")
 local lain = require("lain")
 local markup = lain.util.markup
+local gears = require("gears")
 
 theme.widget_cpu = theme.dir .. "/icons/widgets/cpu.png"
 local cpu_icon = wibox.widget.imagebox(theme.widget_cpu)
@@ -12,7 +13,8 @@ local cpu = lain.widget.cpu({
 })
 local cpu_widget = wibox.container.background(
 	wibox.container.margin(wibox.widget({ cpu_icon, cpu.widget, layout = wibox.layout.align.horizontal }), 0, 0),
-	theme.blue
+	theme.blue,
+  gears.shape.rounded_rect
 )
 
 return cpu_widget

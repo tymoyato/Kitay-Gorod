@@ -2,6 +2,7 @@
 local wibox = require("wibox")
 local awful = require("awful")
 local lain = require("lain")
+local gears = require("gears")
 
 theme.widget_language_us = theme.dir .. "/icons/widgets/language_us.png"
 theme.widget_language_fr = theme.dir .. "/icons/widgets/language_fr.png"
@@ -44,7 +45,8 @@ kbd_widget:buttons(awful.util.table.join(
 
 local kbd_widget_container = wibox.container.background(
     wibox.container.margin(wibox.widget({ language_icon, kbd_widget, layout = wibox.layout.align.horizontal }), 0, 0, 0, 0),
-    theme.green
+    theme.green,
+    gears.shape.rounded_rect
 )
 
 return kbd_widget_container

@@ -61,7 +61,8 @@ local volumebg = wibox.container.background(theme.volume.bar, "#888888", gears.s
 local vol_widget = wibox.container.margin(volumebg, 2, 7, 4, 4)
 local volume_widget = wibox.container.background(
 	wibox.container.margin(wibox.widget({ vol_icon, vol_widget, layout = wibox.layout.align.horizontal }), 0, 0),
-	theme.lightgrey
+	theme.lightgrey,
+  gears.shape.rounded_bar
 )
 
 return volume_widget
