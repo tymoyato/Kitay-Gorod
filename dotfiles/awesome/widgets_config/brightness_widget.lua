@@ -13,15 +13,7 @@ local brightness_icon = wibox.widget.imagebox(theme.widget_brightness)
 local function get_brightness()
 	awful.spawn.easy_async_with_shell("light -G", function(stdout)
 		local brightness = tonumber(stdout:match("(%d+)"))
-		if brightness then
-			if brightness == 0 then
-				brightness_icon:set_image(theme.widget_brightness_no)
-			elseif brightness <= 50 then
-				brightness_icon:set_image(theme.widget_brightness_low)
-			else
-				brightness_icon:set_image(theme.widget_brightness)
-			end
-		end
+		brightness_icon:set_image(theme.widget_brightness)
 	end)
 end
 
