@@ -109,6 +109,7 @@ theme.darkred = "#c92132"
 theme.darkgreen = "#4d7358"
 theme.darkyellow = "#f18e38"
 theme.gray = "#5e5e5e"
+theme.lightgrey = "#b3b3cc"
 theme.violet = "#8c8ccd"
 theme.pink = "#B85C8A"
 theme.black = theme.bg_normal
@@ -132,6 +133,8 @@ local temp_widget = require("widgets_config.temp_widget")
 local volume_widget = require("widgets_config.volume_widget")
 -- Keyboard layout switcher
 local kbd_widget = require("widgets.kbd_widget.kbd_widget")
+-- brightness
+local brightness_widget = require("widgets_config.brightness_widget")
 
 function theme.connect(s)
 	-- Quake application
@@ -203,6 +206,7 @@ function theme.connect(s)
 			-- Keyboard
 			kbd_widget,
 			-- Volume
+      brightness_widget,
 			volume_widget,
 			-- Net speed widget
 			wibox.container.background(net_speed_widget(), theme.yellow),

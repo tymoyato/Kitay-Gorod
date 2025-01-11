@@ -61,6 +61,11 @@ local function worker(user_args)
 	local width = args.width or 55
 
 	net_speed_widget = wibox.widget({
+    {
+			image = ICONS_DIR .. "speed.png",
+			widget = wibox.widget.imagebox,
+			bg = "#FFFF00",
+		},
 		{
 			id = "rx_speed",
 			forced_width = width,
