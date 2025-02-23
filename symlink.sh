@@ -9,11 +9,10 @@ setup_configs() {
 		"fish"
 		"kitty"
 		"nvim"
-    		"awesome"
-    		"picom"
-      		"rofi"
-          "lazygit"
-		#"BraveSoftware/Brave-Browser/Default/Preferences"
+    "awesome"
+    "picom"
+    "rofi"
+    "lazygit"
 	)
 
 	# Remove existing configurations

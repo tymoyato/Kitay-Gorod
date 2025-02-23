@@ -1,9 +1,13 @@
 return {
+  --
+  --@Autocompletion and Code Intelligence
+  --
   --# nvim-cmp
   {
     "hrsh7th/nvim-cmp",
     opts = require("configs.cmp").sources,
   },
+  --
   --# codeium.nvim
   {
     "Exafunction/codeium.nvim",
@@ -16,13 +20,16 @@ return {
     end,
     lazy = false,
   },
+  --
   --# conform.nvim
   {
     "stevearc/conform.nvim",
     lazy = true,
-    -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
+  --
+  --@LSP and Language Servers
+  --
   --# nvim-lspconfig
   {
     "neovim/nvim-lspconfig",
@@ -32,24 +39,32 @@ return {
       require "configs.lspconfig"
     end,
   },
-  --# none-ls.nvim
-  -- {
-  --   "nvimtools/none-ls.nvim",
-  --   lazy = false,
-  --   config = function()
-  --     require "configs.null-ls"
-  --   end,
-  -- },
+  --
   --# mason.nvim
   {
     "williamboman/mason.nvim",
     opts = require("configs.mason").ensure_installed,
   },
+  --
+  --@Treesitter and Syntax Highlighting
+  --
   --# nvim-treesitter
   {
     "nvim-treesitter/nvim-treesitter",
     opts = require("configs.treesitter").ensure_installed,
   },
+  --
+  --# nvim-treesitter-endwise
+  { "RRethy/nvim-treesitter-endwise", ft = "ruby", lazy = false },
+
+  --# tree-sitter-embedded-template
+  { "tree-sitter/tree-sitter-embedded-template", ft = "embedded_template", lazy = false },
+
+  --# nvim-treesitter-textobjects
+  { "nvim-treesitter/nvim-treesitter-textobjects" },
+  --
+  --@Markdown and Documentation
+  --
   --# markdown-preview.nvim
   {
     "iamcco/markdown-preview.nvim",
@@ -61,18 +76,26 @@ return {
     end,
     ft = { "markdown" },
   },
+  --
+  --@Ruby Development
+  --
   --# vim-rails
   { "tpope/vim-rails", ft = "ruby", lazy = false },
+
   --# vim-ruby
   { "vim-ruby/vim-ruby", ft = "ruby", lazy = false },
-  --# nvim-treesitter-endwise
-  { "RRethy/nvim-treesitter-endwise", ft = "ruby", lazy = false },
-  --# tree-sitter-embedded-template
-  { "tree-sitter/tree-sitter-embedded-template", ft = "embedded_template", lazy = false },
+
+  --# rainbow-delimiters.nvim
+  { "HiPhish/rainbow-delimiters.nvim", ft = "ruby", lazy = false },
+  --
+  --@Git and Version Control
+  --
   --# vim-fugitive
   { "tpope/vim-fugitive", lazy = false },
+
   --# diffview
   { "sindrets/diffview.nvim", lazy = true },
+
   --# lazygit.nvim
   {
     "kdheepak/lazygit.nvim",
@@ -91,6 +114,7 @@ return {
       { "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
   },
+
   --# neogit
   {
     "NeogitOrg/neogit",
@@ -105,54 +129,27 @@ return {
       { "<leader>gn", "<cmd>Neogit<cr>", desc = "NeoGit" },
     },
   },
+  --
+  --@Editing and Navigation
+  --
   --# vim-visual-multi
   { "mg979/vim-visual-multi", lazy = false },
+
   --# vim-surround
   { "tpope/vim-surround", lazy = false },
-  --# rainbow-delimiters.nvim
-  { "HiPhish/rainbow-delimiters.nvim", ft = "ruby", lazy = false },
+
   --# nvim-colorizer.lua
   {
     "NvChad/nvim-colorizer.lua",
     enabled = true,
   },
-  --# nvim-treesitter-textobjects
-  { "nvim-treesitter/nvim-treesitter-textobjects" },
-  --# vim-dadbod
-  {
-    "tpope/vim-dadbod",
-    lazy = true,
-    ft = "sql",
-    dependencies = {
-      "kristijanhusak/vim-dadbod-ui",
-      "kristijanhusak/vim-dadbod-completion",
-      -- lazy = false,
-    },
-  },
-  --# nvim-dap
-  {
-    "mfussenegger/nvim-dap",
-    lazy = true,
-    dependencies = {
-      "nvim-neotest/nvim-nio",
-      "rcarriga/nvim-dap-ui",
-      "leoluz/nvim-dap-go",
-      "suketa/nvim-dap-ruby",
-      "theHamsta/nvim-dap-virtual-text",
-      -- lazy = false,
-    },
-    config = function()
-      require "configs.nvim-dap"
-    end,
-  },
+
   --# flash.nvim
   {
     "folke/flash.nvim",
     lazy = true,
     event = "VeryLazy",
-    ---@type Flash.Config
     opts = {},
-  -- stylua: ignore
     keys = {
       { "<leader>ss", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
       { "<leader>sS", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
@@ -161,24 +158,21 @@ return {
       { "<leader>s<leader>",mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
+
   --# auto-session
   {
     "rmagatti/auto-session",
     lazy = false,
-
-    ---enables autocomplete for opts
-    ---@module "auto-session"
-    ---@type AutoSession.Config
     opts = {
       suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-      -- log_level = 'debug',
     },
   },
+
   --# goto-preview
   {
     "rmagatti/goto-preview",
     event = "BufEnter",
-    config = true, -- necessary as per https://github.com/rmagatti/goto-preview/issues/88
+    config = true,
     keys = {
       {
         "<leader>gpd",
@@ -224,8 +218,27 @@ return {
       },
     },
   },
-  --# diffview.nvim
-  { "sindrets/diffview.nvim", lazy = "true" },
+  --
+  --@Debugging
+  --
+  --# nvim-dap
+  {
+    "mfussenegger/nvim-dap",
+    lazy = true,
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "rcarriga/nvim-dap-ui",
+      "leoluz/nvim-dap-go",
+      "suketa/nvim-dap-ruby",
+      "theHamsta/nvim-dap-virtual-text",
+    },
+    config = function()
+      require "configs.nvim-dap"
+    end,
+  },
+  --
+  --@Testing
+  --
   --# neotest
   {
     "nvim-neotest/neotest",
@@ -237,13 +250,26 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
+  --
+  --@Database
+  --
+  --# vim-dadbod
+  {
+    "tpope/vim-dadbod",
+    lazy = true,
+    ft = "sql",
+    dependencies = {
+      "kristijanhusak/vim-dadbod-ui",
+      "kristijanhusak/vim-dadbod-completion",
+    },
+  },
+  --
+  --@Utility and Productivity
+  --
+  --# Harpoon
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
-  --# rest.nvim
-  -- {
-  --   "rest-nvim/rest.nvim",
-  -- },
 }
