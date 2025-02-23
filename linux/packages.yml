@@ -8,6 +8,7 @@ apt:
     - binutils
     - gcc
     - bison
+    - wmctrl
   essential:
     - brave-browser
     - zlib1g-dev
@@ -20,7 +21,6 @@ apt:
     - picom
     - xclip
     - flameshot
-    - wmctrl
     - xdotool
     - light #allow bin sudo
 brew:

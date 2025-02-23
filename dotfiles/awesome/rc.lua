@@ -77,18 +77,6 @@ lain.layout.cascade.tile.extra_padding = 5
 lain.layout.cascade.tile.nmaster = 5
 lain.layout.cascade.tile.ncol = 2
 
--- Autostart windowless processes
--- local function run_once(cmd_arr)
--- 	for _, cmd in ipairs(cmd_arr) do
--- 		local findme = cmd
--- 		local firstspace = cmd:find(" ")
--- 		if firstspace then
--- 			findme = cmd:sub(0, firstspace - 1)
--- 		end
--- 		awful.spawn.with_shell(string.format("pgrep -u $USER -x %s > /dev/null || (%s)", findme, cmd))
--- 	end
--- end
-
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 local themes = {
@@ -104,6 +92,7 @@ local editor = os.getenv("EDITOR") or "editor"
 local editor_cmd = TERMINAL .. " -e " .. editor
 awful.spawn.with_shell("~/.config/awesome/display-setup.sh")
 awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
+awful.spawn.with_shell("~/.config/awesome/utils/startup_apps.sh")
 MODKEY = "Mod4"
 local altkey = "Mod1"
 
@@ -458,6 +447,10 @@ awful.rules.rules = {
 		},
 	},
 
+	{ rule = { class = "kitty" }, properties = { screen = 1, tag = "1" } },
+	{ rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "2" } },
+
+
 	-- Floating clients.
 	-- {
 	-- 	rule_any = {
@@ -495,10 +488,6 @@ awful.rules.rules = {
 
 	-- Add titlebars to normal clients and dialogs
 	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
-
-	-- Set Firefox to always map on the tag named "2" on screen 1.
-	-- { rule = { class = "Firefox" },
-	--   properties = { screen = 1, tag = "2" } },
 }
 -- }}}
 
