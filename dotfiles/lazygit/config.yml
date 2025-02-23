@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 git:
- branchPrefix: "*/BEC-**-"
+ branchPrefix: "*/*/"
  commitPrefix:
-    pattern: "^(\\w+)\\/(\\w+-\\w+).*"
-    replace: '$1():  $2'
+    pattern: "^\\w+\\/\\w+-\\d+\\/(.*)"
+    replace: '(): $1'
 gui:
   scrollHeight: 10 # how many lines you scroll by
   scrollPastBottom: false # enable scrolling past the bottom

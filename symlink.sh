@@ -13,6 +13,7 @@ setup_configs() {
     "picom"
     "rofi"
     "lazygit"
+    "btop"
 	)
 
 	# Remove existing configurations
