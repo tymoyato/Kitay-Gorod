@@ -14,6 +14,7 @@ setup_configs() {
     "rofi"
     "lazygit"
     "btop"
+    "zellij"
 	)
 
 	# Remove existing configurations
