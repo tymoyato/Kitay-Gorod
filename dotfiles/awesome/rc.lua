@@ -199,7 +199,7 @@ GLOBALKEYS = gears.table.join(
 		end)
 	end, { description = "toggle wibox", group = "awesome" }),
 
-	awful.key({ MODKEY, "Shift" }, "l", function()
+	awful.key({ MODKEY, "Control" }, "x", function()
 		awful.util.spawn(i3lock_settings)
 	end),
 	awful.key({ MODKEY }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
@@ -245,30 +245,30 @@ GLOBALKEYS = gears.table.join(
 	awful.key({ MODKEY, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ MODKEY, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
-	-- awful.key({ MODKEY }, "l", function()
-	-- 	awful.tag.incmwfact(0.05)
-	-- end, { description = "increase master width factor", group = "layout" }),
-	-- awful.key({ MODKEY }, "h", function()
-	-- 	awful.tag.incmwfact(-0.05)
-	-- end, { description = "decrease master width factor", group = "layout" }),
-	-- awful.key({ MODKEY, "Shift" }, "h", function()
-	-- 	awful.tag.incnmaster(1, nil, true)
-	-- end, { description = "increase the number of master clients", group = "layout" }),
-	-- awful.key({ MODKEY, "Shift" }, "l", function()
-	-- 	awful.tag.incnmaster(-1, nil, true)
-	-- end, { description = "decrease the number of master clients", group = "layout" }),
-	-- awful.key({ MODKEY, "Control" }, "h", function()
-	-- 	awful.tag.incncol(1, nil, true)
-	-- end, { description = "increase the number of columns", group = "layout" }),
-	-- awful.key({ MODKEY, "Control" }, "l", function()
-	-- 	awful.tag.incncol(-1, nil, true)
-	-- end, { description = "decrease the number of columns", group = "layout" }),
-	-- awful.key({ MODKEY }, "space", function()
-	-- 	awful.layout.inc(1)
-	-- end, { description = "select next", group = "layout" }),
-	-- awful.key({ MODKEY, "Shift" }, "space", function()
-	-- 	awful.layout.inc(-1)
-	-- end, { description = "select previous", group = "layout" }),
+	awful.key({ MODKEY }, "l", function()
+		awful.tag.incmwfact(0.05)
+	end, { description = "increase master width factor", group = "layout" }),
+	awful.key({ MODKEY }, "h", function()
+		awful.tag.incmwfact(-0.05)
+	end, { description = "decrease master width factor", group = "layout" }),
+	awful.key({ MODKEY, "Shift" }, "h", function()
+		awful.tag.incnmaster(1, nil, true)
+	end, { description = "increase the number of master clients", group = "layout" }),
+	awful.key({ MODKEY, "Shift" }, "l", function()
+		awful.tag.incnmaster(-1, nil, true)
+	end, { description = "decrease the number of master clients", group = "layout" }),
+	awful.key({ MODKEY, "Control" }, "h", function()
+		awful.tag.incncol(1, nil, true)
+	end, { description = "increase the number of columns", group = "layout" }),
+	awful.key({ MODKEY, "Control" }, "l", function()
+		awful.tag.incncol(-1, nil, true)
+	end, { description = "decrease the number of columns", group = "layout" }),
+	awful.key({ MODKEY }, "space", function()
+		awful.layout.inc(1)
+	end, { description = "select next", group = "layout" }),
+	awful.key({ MODKEY, "Shift" }, "space", function()
+		awful.layout.inc(-1)
+	end, { description = "select previous", group = "layout" }),
 
 	awful.key({ MODKEY, "Control" }, "n", function()
 		local c = awful.client.restore()
