@@ -449,6 +449,8 @@ awful.rules.rules = {
 
 	{ rule = { class = "kitty" }, properties = { screen = 1, tag = "1" } },
 	{ rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "2" } },
+  { rule = { class = "bruno" }, properties = { screen = 1, tag = "3" } },
+  { rule = { class = "Spotube" }, properties = { screen = 1, tag = "4" } },
 
 
 	-- Floating clients.
