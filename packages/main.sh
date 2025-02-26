@@ -6,4 +6,5 @@ install_packages() {
 	install_nvchad
 	install_homebrew
 	install_gvm
+  install_spotube
 }
