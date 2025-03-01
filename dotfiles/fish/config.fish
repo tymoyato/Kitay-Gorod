@@ -15,6 +15,7 @@ alias z=zoxide
 alias i="zj --layout ~/.Kitay-Gorod/dotfiles/zellij/layout.kdl"
 alias coverage_rspec='COVERAGE=true bundle exec rspec spec/'
 alias idl_rswag='RAILS_ENV=test rails rswag'
+alias lazydocker='sudo $(which lazydocker)'
 
 # eza - general use aliases updated for eza
 alias ls='eza'                                      # Basic replacement for ls with eza
