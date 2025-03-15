@@ -48,8 +48,6 @@ bash .Kitay-Gorod/.devtools/git.sh
 ```
 ## Screenshots
 
-### iceland theme
-
 ![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/kitay/screenshots/iceland-desktop.png)
 ---
 
