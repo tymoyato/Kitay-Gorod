@@ -50,10 +50,10 @@ bash .Kitay-Gorod/.devtools/git.sh
 
 ### iceland theme
 
-![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/iceland/screenshots/iceland-desktop.png)
+![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/kitay/screenshots/iceland-desktop.png)
 ---
 
-![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/iceland/screenshots/iceland-nvim.png)
+![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/kitay/screenshots/iceland-nvim.png)
 ---
 
 ## Awesome WM v4.3
