@@ -80,7 +80,7 @@ lain.layout.cascade.tile.ncol = 2
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 local themes = {
-	"mountain",
+	"kitay",
 }
 local i3lock_settings = "i3lock-fancy"
 local chosen_theme = themes[1]
@@ -295,7 +295,7 @@ GLOBALKEYS = gears.table.join(
 	-- awful.key({ MODKEY }, "o", function() menubar.show() end,
 	--           {description = "show the menubar", group = "launcher"}),
 	awful.key({ MODKEY }, "p", function()
-		awful.util.spawn(string.format("rofi -show run"))
+		awful.util.spawn(string.format("rofi -show drun"))
 	end),
 
 	-- awful.key({ MODKEY }, "o", function () scratch.drop("kitty", "bottom", "left", 0.60, 0.60, true, mouse.screen) end),

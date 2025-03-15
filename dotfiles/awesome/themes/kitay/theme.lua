@@ -5,8 +5,8 @@ local wibox = require("wibox")
 local os, math, string = os, math, string
 
 theme = {}
-theme.dir = os.getenv("HOME") .. "/.config/awesome/themes/mountain"
-theme.wallpaper = theme.dir .. "/wallpapers/mountain.jpg"
+theme.dir = os.getenv("HOME") .. "/.config/awesome/themes/kitay"
+theme.wallpaper = theme.dir .. "/wallpapers/iceland.jpg"
 theme.font = "Meslo LGS Regular 10"
 theme.taglist_font = "Meslo LGS Bold 10"
 theme.tasklist_font = "Terminus 10"

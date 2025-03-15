@@ -48,12 +48,12 @@ bash .Kitay-Gorod/.devtools/git.sh
 ```
 ## Screenshots
 
-### mountain theme
+### iceland theme
 
-![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/mountain/screenshots/mountain-desktop.png)
+![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/mountain/screenshots/iceland-desktop.png)
 ---
 
-![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/mountain/screenshots/mountain-nvim.png)
+![](https://github.com/tymoyato/Kitay-Gorod/blob/main/dotfiles/awesome/themes/mountain/screenshots/iceland-nvim.png)
 ---
 
 ## Awesome WM v4.3
