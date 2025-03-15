@@ -6,6 +6,8 @@ set -Ux fish_user_paths /home/linuxbrew/.linuxbrew/bin $fish_user_paths
 set -x GVM_ROOT $HOME/.gvm
 set -x PATH $GVM_ROOT/bin $PATH
 set --universal nvm_default_version 20
+set -U fish_user_paths $HOME/apps/clion-2024.3.4/bin $fish_user_paths
+set -x PATH $HOME/apps/clion-2024.3.4/bin $PATH
 
 # aliases
 alias g=git
