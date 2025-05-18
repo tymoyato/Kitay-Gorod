@@ -8,6 +8,7 @@ conform = {
     javascript = { "prettierd", "prettier", stop_after_first = true },
     css = { "prettier" },
     html = { "prettier" },
+    yaml = { "yamlfmt" },
   },
 
   -- format_on_save = {

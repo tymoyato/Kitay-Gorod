@@ -25,7 +25,8 @@ declare -A processes=(
   ["brave-browser"]="brave-browser"
   ["bruno"]="bruno"
   ["kitty"]="kitty"
-  ["spotube"]="spotube"
+  ["slack"]="slack"
+  ["rubymine"]="rubymine"
 )
 
 for process_name in "${!processes[@]}"; do

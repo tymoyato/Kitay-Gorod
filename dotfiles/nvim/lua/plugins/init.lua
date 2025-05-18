@@ -307,4 +307,62 @@ return {
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
+  --# rest.nvim
+  -- {
+  --   "rest-nvim/rest.nvim",
+  -- },
+  "rachartier/tiny-glimmer.nvim",
+  lazy = false,
+  event = "VeryLazy",
+  opts = {
+    -- your configuration
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    event = "InsertEnter",
+    opts = {
+      suggestion = {
+        enabled = not vim.g.ai_cmp,
+        hide_during_completion = vim.g.ai_cmp,
+        keymap = {
+          accept = false,
+          next = "<M-]>",
+          prev = "<M-[>",
+        },
+      },
+      panel = { enabled = false },
+      filetypes = {
+        markdown = true,
+        help = true,
+      },
+    },
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    lazy = false,
+    config = function()
+      require("copilot_cmp").setup {
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      }
+    end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    lazy = false,
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      -- TODO: do something
+    },
+  },
+  {
+    "sphamba/smear-cursor.nvim",
+    lazy = false,
+    opts = {},
+  }
 }

@@ -90,9 +90,16 @@ beautiful.init(theme_path)
 TERMINAL = "kitty"
 local editor = os.getenv("EDITOR") or "editor"
 local editor_cmd = TERMINAL .. " -e " .. editor
-awful.spawn.with_shell("~/.config/awesome/display-setup.sh")
 awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
-awful.spawn.with_shell("~/.config/awesome/utils/startup_apps.sh")
+-- awful.spawn.with_shell("~/.config/awesome/utils/apps.sh")
+awful.spawn.with_shell("~/.utils/apps.sh")
+awful.spawn.with_shell("sudo -u eduttoo DISPLAY=:0 /home/eduttoo/.utils/reset_display.sh")
+-- awful.spawn.single_instance("kitty", awful.rules.rules)
+-- awful.spawn.single_instance("slack", awful.rules.rules)
+awful.spawn.with_shell("~/.utils/apps.sh")
+-- awful.spawn.with_shell("~/.utils/vpn.sh")
+awful.spawn.with_shell("~/.utils/touchpad.sh")
+
 MODKEY = "Mod4"
 local altkey = "Mod1"
 
@@ -431,6 +438,27 @@ root.keys(GLOBALKEYS)
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
+
+-- Function to check the number of displays
+-- local function get_screen_count()
+-- 	return screen.count()
+-- end
+--
+-- -- Define the rules based on the number of displays
+-- local rules = {}
+
+-- if get_screen_count() == 2 then
+-- 	table.insert(rules, { rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "2" } })
+-- 	table.insert(rules, { rule = { class = "kitty" }, properties = { screen = 1, tag = "1" } })
+-- 	table.insert(rules, { rule = { class = "Postman" }, properties = { screen = 1, tag = "3" } })
+-- 	table.insert(rules, { rule = { class = "Slack" }, properties = { screen = 2, tag = "1" } })
+-- else
+	-- table.insert(rules, { rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "2" } })
+	-- table.insert(rules, { rule = { class = "kitty" }, properties = { screen = 1, tag = "1" } })
+	-- table.insert(rules, { rule = { class = "Postman" }, properties = { screen = 1, tag = "3" } })
+	-- table.insert(rules, { rule = { class = "Slack" }, properties = { screen = 1, tag = "4" } })
+-- end
+
 awful.rules.rules = {
 	-- All clients will match this rule.
 	{
@@ -448,45 +476,11 @@ awful.rules.rules = {
 	},
 
 	{ rule = { class = "kitty" }, properties = { screen = 1, tag = "1" } },
-	{ rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "2" } },
-  { rule = { class = "bruno" }, properties = { screen = 1, tag = "3" } },
-  { rule = { class = "Spotube" }, properties = { screen = 1, tag = "4" } },
-
-
-	-- Floating clients.
-	-- {
-	-- 	rule_any = {
-	-- 		instance = {
-	-- 			"DTA", -- Firefox addon DownThemAll.
-	-- 			"copyq", -- Includes session name in class.
-	-- 			"pinentry",
-	-- 		},
-	-- 		class = {
-	-- 			"Arandr",
-	-- 			"Blueman-manager",
-	-- 			"Gpick",
-	-- 			"Kruler",
-	-- 			"MessageWin",
-	-- 			"Sxiv",
-	-- 			"Tor Browser",
-	-- 			"Wpa_gui",
-	-- 			"veromix",
-	-- 			"xtightvncviewer",
-	-- 		},
-	--
-	-- 		-- Note that the name property shown in xprop might be set slightly after creation of the client
-	-- 		-- and the name shown there might not match defined rules here.
-	-- 		name = {
-	-- 			"Event Tester", -- xev.
-	-- 		},
-	-- 		role = {
-	-- 			"AlarmWindow", -- Thunderbird's calendar.
-	-- 			"ConfigManager", -- Thunderbird's about:config.
-	-- 			"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
-	-- 		},
-	-- 	},
-	-- 	properties = { floating = true },
-	-- },
+	{ rule = { class = "rubymine" }, properties = { screen = 1, tag = "2" } },
+	{ rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "3" } },
+	{ rule = { class = "bruno" }, properties = { screen = 1, tag = "4" } },
+	{ rule = { class = "firefox" }, properties = { screen = 1, tag = "5" } },
+	{ rule = { class = "Slack" }, properties = { screen = 1, tag = "6" } },
 
 	-- Add titlebars to normal clients and dialogs
 	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
