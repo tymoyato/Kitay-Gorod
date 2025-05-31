@@ -12,7 +12,7 @@
 . ./packages/nvchad.sh
 . ./packages/homebrew.sh
 . ./packages/gvm.sh
-. ./packages/spotube.sh
+. ./packages/jetbrains-toolbox.sh
 . ./packages/main.sh
 . ./sources/fish.sh
 . ./sources/brave.sh
