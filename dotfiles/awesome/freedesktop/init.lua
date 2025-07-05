@@ -1,4 +1,3 @@
-
 --[[
                                                         
      Awesome-Freedesktop                                
@@ -11,6 +10,6 @@
 --]]
 
 return {
-    desktop  = require("freedesktop.desktop"),
-    menu     = require("freedesktop.menu")
+	desktop = require("freedesktop.desktop"),
+	menu = require("freedesktop.menu"),
 }

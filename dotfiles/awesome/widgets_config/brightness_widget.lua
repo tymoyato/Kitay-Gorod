@@ -88,7 +88,7 @@ local brightness_final_widget = wibox.container.background(
 		2
 	),
 	"#00cec9",
-  gears.shape.rounded_rect
+	gears.shape.rounded_rect
 )
 
 return brightness_final_widget

@@ -17,12 +17,11 @@ local function factory(args)
 	local temp = { widget = wibox.widget.textbox() }
 	local args = args or {}
 	local timeout = args.timeout or 2
-	local tempfiles = args.tempfiles
-		or {
-			"/sys/class/hwmon/hwmon9/temp1_input",
-		}
+	local tempfiles = args.tempfiles or {
+		"/sys/class/hwmon/hwmon9/temp1_input",
+	}
 	local settings = args.settings or function() end
-  CORETEMP_NOW = nil
+	CORETEMP_NOW = nil
 
 	function temp.update()
 		for _, tempfile in ipairs(tempfiles) do

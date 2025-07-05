@@ -100,38 +100,38 @@ local chosen_theme = themes[current_theme_index]
 local function switch_theme()
 	current_theme_index = current_theme_index % #themes + 1
 	chosen_theme = themes[current_theme_index]
-	
+
 	-- Save current tag state
 	local current_tag = awful.screen.focused().selected_tag
 	local current_tag_index = current_tag and current_tag.index or 1
-	
+
 	-- Show notification before restart
 	naughty.notify({
 		title = "Theme Changed",
 		text = "Switching to " .. chosen_theme .. " theme...",
 		timeout = 1,
 	})
-	
+
 	-- Save current theme index and tag to temporary files
 	local theme_file = io.open("/tmp/awesome_current_theme", "w")
 	if theme_file then
 		theme_file:write(current_theme_index)
 		theme_file:close()
 	end
-	
+
 	local tag_file = io.open("/tmp/awesome_current_tag", "w")
 	if tag_file then
 		tag_file:write(current_tag_index)
 		tag_file:close()
 	end
-	
+
 	-- Create a flag file to indicate this is a theme switch restart
 	local flag_file = io.open("/tmp/awesome_theme_switch", "w")
 	if flag_file then
 		flag_file:write("1")
 		flag_file:close()
 	end
-	
+
 	-- Restart awesome to apply theme change
 	awesome.restart()
 end
@@ -331,21 +331,21 @@ GLOBALKEYS = gears.table.join(
 		-- Save current tag state
 		local current_tag = awful.screen.focused().selected_tag
 		local current_tag_index = current_tag and current_tag.index or 1
-		
+
 		-- Save current tag to temporary file
 		local tag_file = io.open("/tmp/awesome_current_tag", "w")
 		if tag_file then
 			tag_file:write(current_tag_index)
 			tag_file:close()
 		end
-		
+
 		-- Create a flag file to indicate this is a normal restart
 		local flag_file = io.open("/tmp/awesome_normal_restart", "w")
 		if flag_file then
 			flag_file:write("1")
 			flag_file:close()
 		end
-		
+
 		-- Restart awesome
 		awesome.restart()
 	end, { description = "reload awesome", group = "awesome" }),
@@ -557,10 +557,10 @@ root.keys(GLOBALKEYS)
 -- 	table.insert(rules, { rule = { class = "Postman" }, properties = { screen = 1, tag = "3" } })
 -- 	table.insert(rules, { rule = { class = "Slack" }, properties = { screen = 2, tag = "1" } })
 -- else
-	-- table.insert(rules, { rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "2" } })
-	-- table.insert(rules, { rule = { class = "kitty" }, properties = { screen = 1, tag = "1" } })
-	-- table.insert(rules, { rule = { class = "Postman" }, properties = { screen = 1, tag = "3" } })
-	-- table.insert(rules, { rule = { class = "Slack" }, properties = { screen = 1, tag = "4" } })
+-- table.insert(rules, { rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "2" } })
+-- table.insert(rules, { rule = { class = "kitty" }, properties = { screen = 1, tag = "1" } })
+-- table.insert(rules, { rule = { class = "Postman" }, properties = { screen = 1, tag = "3" } })
+-- table.insert(rules, { rule = { class = "Slack" }, properties = { screen = 1, tag = "4" } })
 -- end
 
 -- Check if this is a theme switch restart or normal restart
@@ -587,7 +587,11 @@ awful.rules.rules = {
 	-- Only apply tag rules if this is NOT any kind of restart
 	{ rule = { class = "kitty" }, properties = { screen = 1, tag = "1" }, rule_any = { is_any_restart = false } },
 	{ rule = { class = "rubymine" }, properties = { screen = 1, tag = "2" }, rule_any = { is_any_restart = false } },
-	{ rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "3" }, rule_any = { is_any_restart = false } },
+	{
+		rule = { class = "Brave-browser" },
+		properties = { screen = 1, tag = "3" },
+		rule_any = { is_any_restart = false },
+	},
 	{ rule = { class = "bruno" }, properties = { screen = 1, tag = "4" }, rule_any = { is_any_restart = false } },
 	{ rule = { class = "firefox" }, properties = { screen = 1, tag = "5" }, rule_any = { is_any_restart = false } },
 	{ rule = { class = "Slack" }, properties = { screen = 1, tag = "6" }, rule_any = { is_any_restart = false } },
@@ -608,7 +612,7 @@ client.connect_signal("manage", function(c)
 		-- Prevent clients from being unreachable after screen count changes.
 		awful.placement.no_offscreen(c)
 	end
-	
+
 	-- Debug: Check if we're restoring a tag and prevent client from changing focus
 	local tag_file = io.open("/tmp/awesome_current_tag", "r")
 	if tag_file then

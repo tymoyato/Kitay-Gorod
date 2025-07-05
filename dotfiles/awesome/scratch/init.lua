@@ -8,7 +8,7 @@
 
 local scratch = {} -- module scratch
 
-scratch.pad  = require("scratch.pad")
+scratch.pad = require("scratch.pad")
 scratch.drop = require("scratch.drop")
 
 return scratch

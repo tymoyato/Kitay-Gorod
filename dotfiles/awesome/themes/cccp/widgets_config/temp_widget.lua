@@ -19,7 +19,7 @@ local temp = lain.widget.temp({
 local temp_widget = wibox.container.background(
 	wibox.container.margin(wibox.widget({ temp_icon, temp.widget, layout = wibox.layout.align.horizontal }), 2, 2),
 	"#DC143C",
-  gears.shape.rounded_rect
+	gears.shape.rounded_rect
 )
 
 return temp_widget

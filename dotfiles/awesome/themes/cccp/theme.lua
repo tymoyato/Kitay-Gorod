@@ -14,42 +14,42 @@ theme.tasklist_font = "Terminus 10"
 -- CCCP color scheme
 theme.bg_normal = "#1a1a1a"
 theme.fg_normal = "#ffffff"
-theme.bg_focus = "#8B0000"  -- Dark red
-theme.fg_focus = "#FFD700"  -- Gold
+theme.bg_focus = "#8B0000" -- Dark red
+theme.fg_focus = "#FFD700" -- Gold
 theme.bg_urgent = "#DC143C" -- Crimson red
 theme.fg_urgent = "#FFD700" -- Gold
 
 theme.fg_widget = "#FFD700" -- Gold
 
 -- Taglist colors with CCCP theme
-theme.taglist_bg_focus = "#DC143C"    -- Crimson red
-theme.taglist_fg_focus = "#FFD700"    -- Gold
+theme.taglist_bg_focus = "#DC143C" -- Crimson red
+theme.taglist_fg_focus = "#FFD700" -- Gold
 theme.taglist_bg_occupied = "#8B0000" -- Dark red
 theme.taglist_fg_occupied = "#FFD700" -- Gold
-theme.taglist_bg_empty = "#4A4A4A"    -- Dark gray
-theme.taglist_fg_empty = "#FFD700"    -- Gold
-theme.taglist_bg_urgent = "#FF4500"   -- Orange red
-theme.taglist_fg_urgent = "#FFD700"   -- Gold
+theme.taglist_bg_empty = "#4A4A4A" -- Dark gray
+theme.taglist_fg_empty = "#FFD700" -- Gold
+theme.taglist_bg_urgent = "#FF4500" -- Orange red
+theme.taglist_fg_urgent = "#FFD700" -- Gold
 theme.taglist_shape = gears.shape.rounded_rect
 
 -- Tasklist colors
 theme.tasklist_bg_normal = "#1a1a1a"
 theme.tasklist_fg_normal = "#ffffff"
-theme.tasklist_bg_focus = "#8B0000"   -- Dark red
-theme.tasklist_fg_focus = "#FFD700"   -- Gold
-theme.tasklist_bg_urgent = "#DC143C"  -- Crimson red
-theme.tasklist_fg_urgent = "#FFD700"  -- Gold
+theme.tasklist_bg_focus = "#8B0000" -- Dark red
+theme.tasklist_fg_focus = "#FFD700" -- Gold
+theme.tasklist_bg_urgent = "#DC143C" -- Crimson red
+theme.tasklist_fg_urgent = "#FFD700" -- Gold
 
 theme.border_width = 0
-theme.border_normal = "#8B0000"  -- Dark red
-theme.border_focus = "#DC143C"   -- Crimson red
-theme.border_marked = "#FF4500"  -- Orange red
+theme.border_normal = "#8B0000" -- Dark red
+theme.border_focus = "#DC143C" -- Crimson red
+theme.border_marked = "#FF4500" -- Orange red
 
-theme.titlebar_bg_normal = "#8B0000"  -- Dark red
-theme.titlebar_fg_normal = "#FFD700"  -- Gold
+theme.titlebar_bg_normal = "#8B0000" -- Dark red
+theme.titlebar_fg_normal = "#FFD700" -- Gold
 
-theme.titlebar_bg_focus = "#DC143C"   -- Crimson red
-theme.titlebar_fg_focus = "#FFD700"   -- Gold
+theme.titlebar_bg_focus = "#DC143C" -- Crimson red
+theme.titlebar_fg_focus = "#FFD700" -- Gold
 
 theme.menu_height = 16
 theme.menu_width = 140
@@ -105,31 +105,27 @@ theme.titlebar_maximized_button_focus_active = theme.dir .. "/icons/titlebar/max
 theme.titlebar_maximized_button_focus_inactive = theme.dir .. "/icons/titlebar/maximized_focus_inactive.png"
 
 -- CCCP colors
-theme.green = "#228B22"      -- Forest green
-theme.red = "#DC143C"        -- Crimson red
-theme.yellow = "#FFD700"     -- Gold
-theme.blue = "#4169E1"       -- Royal blue
-theme.darkred = "#8B0000"    -- Dark red
-theme.darkgreen = "#006400"  -- Dark green
+theme.green = "#228B22" -- Forest green
+theme.red = "#DC143C" -- Crimson red
+theme.yellow = "#FFD700" -- Gold
+theme.blue = "#4169E1" -- Royal blue
+theme.darkred = "#8B0000" -- Dark red
+theme.darkgreen = "#006400" -- Dark green
 theme.darkyellow = "#B8860B" -- Dark goldenrod
-theme.gray = "#696969"       -- Dim gray
-theme.lightgrey = "#D3D3D3"  -- Light gray
-theme.violet = "#8A2BE2"     -- Blue violet
-theme.pink = "#FF1493"       -- Deep pink
+theme.gray = "#696969" -- Dim gray
+theme.lightgrey = "#D3D3D3" -- Light gray
+theme.violet = "#8A2BE2" -- Blue violet
+theme.pink = "#FF1493" -- Deep pink
 theme.black = theme.bg_normal
 
 -- USSR Flag widget
 local function create_ussr_flag()
-    -- Create a simple text-based USSR flag
-    local flag_text = wibox.widget.textbox("☭")
-    flag_text.font = "Meslo LGS Regular 12"
-    
-    -- Wrap in a container with background for visibility
-    return wibox.container.background(
-        wibox.container.margin(flag_text, 4, 4),
-        "#DC143C",
-        gears.shape.rounded_rect
-    )
+	-- Create a simple text-based USSR flag
+	local flag_text = wibox.widget.textbox("☭")
+	flag_text.font = "Meslo LGS Regular 12"
+
+	-- Wrap in a container with background for visibility
+	return wibox.container.background(wibox.container.margin(flag_text, 4, 4), "#DC143C", gears.shape.rounded_rect)
 end
 
 -- Panel
@@ -137,7 +133,7 @@ local markup = lain.util.markup
 
 -- Widgets --
 
--- Clock 
+-- Clock
 local clock_widget = require("themes.cccp.widgets_config.clock_widget")
 -- Battery
 local battery_widget = require("themes.cccp.widgets_config.battery_widget")
@@ -228,7 +224,11 @@ function theme.connect(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			-- Net speed widget with CCCP colors
-			wibox.container.background(wibox.container.margin(net_speed_widget(), 2, 2), "#DC143C", gears.shape.rounded_rect),
+			wibox.container.background(
+				wibox.container.margin(net_speed_widget(), 2, 2),
+				"#DC143C",
+				gears.shape.rounded_rect
+			),
 			-- Spacer
 			wibox.widget.textbox(" "),
 			-- Music widget
@@ -240,7 +240,7 @@ function theme.connect(s)
 			-- Spacer
 			wibox.widget.textbox(" "),
 			-- Volume
-      		brightness_widget,
+			brightness_widget,
 			-- Spacer
 			wibox.widget.textbox(" "),
 			volume_widget,

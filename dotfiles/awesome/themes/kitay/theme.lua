@@ -120,7 +120,7 @@ local markup = lain.util.markup
 
 -- Widgets --
 
--- Clock 
+-- Clock
 local clock_widget = require("widgets_config.clock_widget")
 -- Battery
 local battery_widget = require("widgets_config.battery_widget")
@@ -207,7 +207,11 @@ function theme.connect(s)
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			-- Net speed widget
-			wibox.container.background(wibox.container.margin(net_speed_widget(), 2, 2), "#55a3ff", gears.shape.rounded_rect),
+			wibox.container.background(
+				wibox.container.margin(net_speed_widget(), 2, 2),
+				"#55a3ff",
+				gears.shape.rounded_rect
+			),
 			-- Spacer
 			wibox.widget.textbox(" "),
 			-- Music widget
@@ -219,7 +223,7 @@ function theme.connect(s)
 			-- Spacer
 			wibox.widget.textbox(" "),
 			-- Volume
-      		brightness_widget,
+			brightness_widget,
 			-- Spacer
 			wibox.widget.textbox(" "),
 			volume_widget,

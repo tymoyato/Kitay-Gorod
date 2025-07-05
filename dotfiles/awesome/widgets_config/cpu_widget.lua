@@ -14,7 +14,7 @@ local cpu = lain.widget.cpu({
 local cpu_widget = wibox.container.background(
 	wibox.container.margin(wibox.widget({ cpu_icon, cpu.widget, layout = wibox.layout.align.horizontal }), 2, 2),
 	"#00b894",
-  gears.shape.rounded_rect
+	gears.shape.rounded_rect
 )
 
 return cpu_widget

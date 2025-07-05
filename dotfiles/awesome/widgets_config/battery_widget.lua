@@ -102,9 +102,7 @@ local bat = lain.widget.bat({
 				)
 			end
 		else
-			widget:set_markup(
-				markup.font(theme.font, markup.fg.color(theme.fg_widget, " AC "))
-			)
+			widget:set_markup(markup.font(theme.font, markup.fg.color(theme.fg_widget, " AC ")))
 			bat_icon:set_image(theme.widget_battery_no)
 		end
 	end,
@@ -128,16 +126,12 @@ local bat_widget = wibox.container.margin(batbg, 2, 7, 4, 4)
 local battery_widget1 = wibox.container.background(
 	wibox.container.margin(wibox.widget({ bat_icon, bat_widget, layout = wibox.layout.align.horizontal }), 1, 1),
 	"#6c5ce7",
-  gears.shape.rounded_rect
+	gears.shape.rounded_rect
 )
 local battery_widget2 = wibox.container.background(
-	wibox.container.margin(
-		wibox.widget({ bat.widget, layout = wibox.layout.align.horizontal }),
-		0,
-		0
-	),
+	wibox.container.margin(wibox.widget({ bat.widget, layout = wibox.layout.align.horizontal }), 0, 0),
 	"#6c5ce7",
-  gears.shape.rounded_rect
+	gears.shape.rounded_rect
 )
 
 return {
