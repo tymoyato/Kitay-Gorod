@@ -12,11 +12,11 @@ local prev_button = wibox.widget.textbox()
 local next_button = wibox.widget.textbox()
 
 -- Set initial button text
-prev_button:set_markup(markup.font(theme.font, markup.fg.color("#ffffff", "⏮")))
-next_button:set_markup(markup.font(theme.font, markup.fg.color("#ffffff", "⏭")))
+prev_button:set_markup(markup.font(theme.font, markup.fg.color("#FFD700", "⏮")))
+next_button:set_markup(markup.font(theme.font, markup.fg.color("#FFD700", "⏭")))
 
 -- Set initial music text
-music_text:set_markup(markup.font(theme.font, markup.fg.color("#ffffff", " Loading... ")))
+music_text:set_markup(markup.font(theme.font, markup.fg.color("#FFD700", " Loading... ")))
 
 local function update_music()
 	awful.spawn.easy_async_with_shell(
@@ -41,10 +41,10 @@ local function update_music()
 						album_art:set_image(nil)
 					end
 				end)
-				music_text:set_markup(markup.font(theme.font, markup.fg.color("#ffffff", " " .. song .. " ")))
+				music_text:set_markup(markup.font(theme.font, markup.fg.color("#FFD700", " " .. song .. " ")))
 			else
 				album_art:set_image(nil)
-				music_text:set_markup(markup.font(theme.font, markup.fg.color("#ffffff", " No music playing ")))
+				music_text:set_markup(markup.font(theme.font, markup.fg.color("#FFD700", " No music playing ")))
 			end
 		end
 	)
@@ -73,7 +73,7 @@ local music_widget = wibox.container.background(
 		}),
 		2, 4
 	),
-	"#e84393",
+	"#DC143C",
 	gears.shape.rounded_rect
 )
 

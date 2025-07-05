@@ -17,7 +17,7 @@ local current_layout = 0
 
 -- Function to update the keyboard layout widget
 local function update_kbd_widget()
-    kbd_widget:set_markup("<span foreground=" .. "'" .. theme.fg_widget .. "'" .. ">" .. kbdstrings[current_layout] .. "</span>")
+    kbd_widget:set_markup("<span foreground=" .. "'" .. "#FFD700" .. "'" .. ">" .. kbdstrings[current_layout] .. "</span>")
     if current_layout == 0 then
         language_icon:set_image(theme.widget_language_us)
     else
@@ -45,7 +45,7 @@ kbd_widget:buttons(awful.util.table.join(
 
 local kbd_widget_container = wibox.container.background(
     wibox.container.margin(wibox.widget({ language_icon, kbd_widget, layout = wibox.layout.align.horizontal }), 2, 4),
-    "#fd79a8",
+    "#DC143C",
     gears.shape.rounded_rect
 )
 

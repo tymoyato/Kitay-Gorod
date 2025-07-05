@@ -81,9 +81,61 @@ lain.layout.cascade.tile.ncol = 2
 -- Themes define colours, icons, font and wallpapers.
 local themes = {
 	"kitay",
+	"cccp",
 }
 local i3lock_settings = "i3lock-fancy"
-local chosen_theme = themes[1]
+-- Try to read saved theme index from file
+local current_theme_index = 1
+local theme_file = io.open("/tmp/awesome_current_theme", "r")
+if theme_file then
+	local saved_index = tonumber(theme_file:read("*line"))
+	if saved_index and saved_index >= 1 and saved_index <= #themes then
+		current_theme_index = saved_index
+	end
+	theme_file:close()
+end
+
+local chosen_theme = themes[current_theme_index]
+
+local function switch_theme()
+	current_theme_index = current_theme_index % #themes + 1
+	chosen_theme = themes[current_theme_index]
+	
+	-- Save current tag state
+	local current_tag = awful.screen.focused().selected_tag
+	local current_tag_index = current_tag and current_tag.index or 1
+	
+	-- Show notification before restart
+	naughty.notify({
+		title = "Theme Changed",
+		text = "Switching to " .. chosen_theme .. " theme...",
+		timeout = 1,
+	})
+	
+	-- Save current theme index and tag to temporary files
+	local theme_file = io.open("/tmp/awesome_current_theme", "w")
+	if theme_file then
+		theme_file:write(current_theme_index)
+		theme_file:close()
+	end
+	
+	local tag_file = io.open("/tmp/awesome_current_tag", "w")
+	if tag_file then
+		tag_file:write(current_tag_index)
+		tag_file:close()
+	end
+	
+	-- Create a flag file to indicate this is a theme switch restart
+	local flag_file = io.open("/tmp/awesome_theme_switch", "w")
+	if flag_file then
+		flag_file:write("1")
+		flag_file:close()
+	end
+	
+	-- Restart awesome to apply theme change
+	awesome.restart()
+end
+
 local theme_path = string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme)
 beautiful.init(theme_path)
 
@@ -175,6 +227,35 @@ awful.screen.connect_for_each_screen(function(s)
 	beautiful.connect(s)
 end)
 
+-- Restore tag state after restart
+local tag_file = io.open("/tmp/awesome_current_tag", "r")
+if tag_file then
+	local saved_tag_index = tonumber(tag_file:read("*line"))
+	if saved_tag_index and saved_tag_index >= 1 and saved_tag_index <= 9 then
+		-- Use a timer with longer timeout to ensure everything is initialized
+		local restore_timer = gears.timer({ timeout = 1 })
+		restore_timer:connect_signal("timeout", function()
+			local screen = awful.screen.focused()
+			if screen and screen.tags[saved_tag_index] then
+				screen.tags[saved_tag_index]:view_only()
+				-- Show notification for debugging
+				naughty.notify({
+					title = "Tag Restored",
+					text = "Restored to tag " .. saved_tag_index,
+					timeout = 2,
+				})
+			end
+			restore_timer:stop()
+		end)
+		restore_timer:start()
+	end
+	tag_file:close()
+	-- Clean up the temporary files
+	os.remove("/tmp/awesome_current_tag")
+	os.remove("/tmp/awesome_theme_switch")
+	os.remove("/tmp/awesome_normal_restart")
+end
+
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 -- }}}
@@ -246,7 +327,28 @@ GLOBALKEYS = gears.table.join(
 	awful.key({ MODKEY }, "Return", function()
 		awful.spawn(TERMINAL)
 	end, { description = "open a terminal", group = "launcher" }),
-	awful.key({ MODKEY, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
+	awful.key({ MODKEY, "Control" }, "r", function()
+		-- Save current tag state
+		local current_tag = awful.screen.focused().selected_tag
+		local current_tag_index = current_tag and current_tag.index or 1
+		
+		-- Save current tag to temporary file
+		local tag_file = io.open("/tmp/awesome_current_tag", "w")
+		if tag_file then
+			tag_file:write(current_tag_index)
+			tag_file:close()
+		end
+		
+		-- Create a flag file to indicate this is a normal restart
+		local flag_file = io.open("/tmp/awesome_normal_restart", "w")
+		if flag_file then
+			flag_file:write("1")
+			flag_file:close()
+		end
+		
+		-- Restart awesome
+		awesome.restart()
+	end, { description = "reload awesome", group = "awesome" }),
 	awful.key({ MODKEY, "Shift" }, "q", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
 	awful.key({ MODKEY }, "l", function()
@@ -301,6 +403,11 @@ GLOBALKEYS = gears.table.join(
 	awful.key({ MODKEY }, "p", function()
 		awful.util.spawn(string.format("rofi -show drun"))
 	end),
+
+	-- Theme switching
+	awful.key({ MODKEY }, "t", function()
+		switch_theme()
+	end, { description = "switch theme", group = "awesome" }),
 
 	-- awful.key({ MODKEY }, "o", function () scratch.drop("kitty", "bottom", "left", 0.60, 0.60, true, mouse.screen) end),
 	-- Custom
@@ -456,6 +563,11 @@ root.keys(GLOBALKEYS)
 	-- table.insert(rules, { rule = { class = "Slack" }, properties = { screen = 1, tag = "4" } })
 -- end
 
+-- Check if this is a theme switch restart or normal restart
+local is_theme_switch = io.open("/tmp/awesome_theme_switch", "r") ~= nil
+local is_normal_restart = io.open("/tmp/awesome_normal_restart", "r") ~= nil
+local is_any_restart = is_theme_switch or is_normal_restart
+
 awful.rules.rules = {
 	-- All clients will match this rule.
 	{
@@ -472,12 +584,13 @@ awful.rules.rules = {
 		},
 	},
 
-	{ rule = { class = "kitty" }, properties = { screen = 1, tag = "1" } },
-	{ rule = { class = "rubymine" }, properties = { screen = 1, tag = "2" } },
-	{ rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "3" } },
-	{ rule = { class = "bruno" }, properties = { screen = 1, tag = "4" } },
-	{ rule = { class = "firefox" }, properties = { screen = 1, tag = "5" } },
-	{ rule = { class = "Slack" }, properties = { screen = 1, tag = "6" } },
+	-- Only apply tag rules if this is NOT any kind of restart
+	{ rule = { class = "kitty" }, properties = { screen = 1, tag = "1" }, rule_any = { is_any_restart = false } },
+	{ rule = { class = "rubymine" }, properties = { screen = 1, tag = "2" }, rule_any = { is_any_restart = false } },
+	{ rule = { class = "Brave-browser" }, properties = { screen = 1, tag = "3" }, rule_any = { is_any_restart = false } },
+	{ rule = { class = "bruno" }, properties = { screen = 1, tag = "4" }, rule_any = { is_any_restart = false } },
+	{ rule = { class = "firefox" }, properties = { screen = 1, tag = "5" }, rule_any = { is_any_restart = false } },
+	{ rule = { class = "Slack" }, properties = { screen = 1, tag = "6" }, rule_any = { is_any_restart = false } },
 
 	-- Add titlebars to normal clients and dialogs
 	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
@@ -494,6 +607,14 @@ client.connect_signal("manage", function(c)
 	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
 		-- Prevent clients from being unreachable after screen count changes.
 		awful.placement.no_offscreen(c)
+	end
+	
+	-- Debug: Check if we're restoring a tag and prevent client from changing focus
+	local tag_file = io.open("/tmp/awesome_current_tag", "r")
+	if tag_file then
+		tag_file:close()
+		-- Don't focus this client if we're restoring a tag
+		c:emit_signal("request::activate", "manage", { raise = false })
 	end
 end)
 
