@@ -26,7 +26,7 @@ declare -A processes=(
   ["bruno"]="bruno"
   ["kitty"]="kitty"
   ["slack"]="slack"
-  ["rubymine"]="rubymine"
+  ["jetbrains-rubymine"]="jetbrains-rubymine"
 )
 
 for process_name in "${!processes[@]}"; do
