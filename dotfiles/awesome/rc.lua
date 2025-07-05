@@ -436,7 +436,23 @@ GLOBALKEYS = gears.table.join(
 	end, { description = "move tag to the right", group = "tag" }),
 	awful.key({ MODKEY, "Shift" }, "d", function()
 		lain.util.delete_tag()
-	end, { description = "delete tag", group = "tag" })
+	end, { description = "delete tag", group = "tag" }),
+
+	-- Volume control
+	awful.key({ MODKEY, "Shift" }, "=", function()
+		awful.spawn("amixer set Master 5%+")
+		-- Update volume widget if it exists
+		if theme.volume and theme.volume.update then
+			theme.volume.update()
+		end
+	end, { description = "volume up", group = "audio" }),
+	awful.key({ MODKEY, "Shift" }, "-", function()
+		awful.spawn("amixer set Master 5%-")
+		-- Update volume widget if it exists
+		if theme.volume and theme.volume.update then
+			theme.volume.update()
+		end
+	end, { description = "volume down", group = "audio" })
 )
 
 CLIENTKEYS = gears.table.join(
