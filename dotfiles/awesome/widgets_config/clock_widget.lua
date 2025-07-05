@@ -8,8 +8,8 @@ theme.widget_clock = theme.dir .. "/icons/widgets/clock.png"
 local clock_icon = wibox.widget.imagebox(theme.widget_clock)
 local clock = awful.widget.textclock('<span font="Meslo LGS Regular 10" color="#32302f"> %a %d %b  %H:%M </span>')
 local clock_widget = wibox.container.background(
-    wibox.container.margin(wibox.widget({ clock_icon, clock, layout = wibox.layout.align.horizontal }), 0, 1),
-    theme.violet, gears.shape.rounded_rect
+    wibox.container.margin(wibox.widget({ clock_icon, clock, layout = wibox.layout.align.horizontal }), 2, 2),
+    "#a29bfe", gears.shape.rounded_rect
 )
 
 -- Calendar

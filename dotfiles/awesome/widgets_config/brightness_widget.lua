@@ -84,10 +84,10 @@ local brightness_widget = wibox.container.margin(brightnessbg, 2, 7, 4, 4)
 local brightness_final_widget = wibox.container.background(
 	wibox.container.margin(
 		wibox.widget({ brightness_icon, brightness_widget, layout = wibox.layout.align.horizontal }),
-		0,
-		0
+		2,
+		2
 	),
-	theme.darkgreen,
+	"#00cec9",
   gears.shape.rounded_rect
 )
 

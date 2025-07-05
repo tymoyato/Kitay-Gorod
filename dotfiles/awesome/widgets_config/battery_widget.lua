@@ -39,12 +39,9 @@ local bat = lain.widget.bat({
 				widget:set_markup(
 					markup.font(
 						theme.font,
-						markup.bg.color(
-							theme.blue,
-							markup.fg.color(
-								theme.fg_widget,
-								" +" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
-							)
+						markup.fg.color(
+							theme.fg_widget,
+							" +" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
 						)
 					)
 				)
@@ -54,7 +51,7 @@ local bat = lain.widget.bat({
 					markup.font(
 						theme.font,
 						markup.fg.color(
-							"#232323",
+							theme.fg_widget,
 							" ~" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
 						)
 					)
@@ -64,12 +61,9 @@ local bat = lain.widget.bat({
 				widget:set_markup(
 					markup.font(
 						theme.font,
-						markup.bg.color(
-							theme.red,
-							markup.fg.color(
-								theme.fg_widget,
-								" -" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
-							)
+						markup.fg.color(
+							theme.fg_widget,
+							" -" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
 						)
 					)
 				)
@@ -78,12 +72,9 @@ local bat = lain.widget.bat({
 				widget:set_markup(
 					markup.font(
 						theme.font,
-						markup.bg.color(
-							theme.yellow,
-							markup.fg.color(
-								theme.fg_widget,
-								" -" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
-							)
+						markup.fg.color(
+							theme.fg_widget,
+							" -" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
 						)
 					)
 				)
@@ -92,12 +83,9 @@ local bat = lain.widget.bat({
 				widget:set_markup(
 					markup.font(
 						theme.font,
-						markup.bg.color(
-							theme.green,
-							markup.fg.color(
-								theme.fg_widget,
-								" -" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
-							)
+						markup.fg.color(
+							theme.fg_widget,
+							" -" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
 						)
 					)
 				)
@@ -106,19 +94,16 @@ local bat = lain.widget.bat({
 				widget:set_markup(
 					markup.font(
 						theme.font,
-						markup.bg.color(
-							theme.blue,
-							markup.fg.color(
-								theme.fg_widget,
-								" -" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
-							)
+						markup.fg.color(
+							theme.fg_widget,
+							" -" .. bat_now.perc .. "% [" .. bat_now.watt .. "W][" .. bat_now.time .. "]"
 						)
 					)
 				)
 			end
 		else
 			widget:set_markup(
-				markup.font(theme.font, markup.bg.color(theme.red, markup.fg.color(theme.fg_widget, " AC ")))
+				markup.font(theme.font, markup.fg.color(theme.fg_widget, " AC "))
 			)
 			bat_icon:set_image(theme.widget_battery_no)
 		end
@@ -142,7 +127,7 @@ local batbg = wibox.container.background(batbar, "#474747")
 local bat_widget = wibox.container.margin(batbg, 2, 7, 4, 4)
 local battery_widget1 = wibox.container.background(
 	wibox.container.margin(wibox.widget({ bat_icon, bat_widget, layout = wibox.layout.align.horizontal }), 1, 1),
-	theme.gray,
+	"#6c5ce7",
   gears.shape.rounded_rect
 )
 local battery_widget2 = wibox.container.background(
@@ -151,7 +136,7 @@ local battery_widget2 = wibox.container.background(
 		0,
 		0
 	),
-	theme.gray,
+	"#6c5ce7",
   gears.shape.rounded_rect
 )
 

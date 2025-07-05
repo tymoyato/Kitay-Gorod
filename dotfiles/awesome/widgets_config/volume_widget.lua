@@ -60,9 +60,9 @@ theme.volume.bar:buttons(awful.util.table.join(
 local volumebg = wibox.container.background(theme.volume.bar, "#888888", gears.shape.rectangle)
 local vol_widget = wibox.container.margin(volumebg, 2, 7, 4, 4)
 local volume_widget = wibox.container.background(
-	wibox.container.margin(wibox.widget({ vol_icon, vol_widget, layout = wibox.layout.align.horizontal }), 0, 0),
+	wibox.container.margin(wibox.widget({ vol_icon, vol_widget, layout = wibox.layout.align.horizontal }), 2, 2),
 	theme.lightgrey,
-  gears.shape.rounded_bar
+  gears.shape.rounded_rect
 )
 
 return volume_widget

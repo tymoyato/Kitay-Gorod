@@ -20,14 +20,15 @@ theme.fg_urgent = "#282828"
 
 theme.fg_widget = "#32302f"
 
-theme.taglist_bg_focus = "#d2d2d2"
-theme.taglist_fg_focus = "#000000"
-theme.taglist_bg_occupied = "#28282B"
-theme.taglist_fg_occupied = "#ffffff"
-theme.taglist_bg_empty = "#000000"
+theme.taglist_bg_focus = "#6c5ce7"
+theme.taglist_fg_focus = "#ffffff"
+theme.taglist_bg_occupied = "#2d3436"
+theme.taglist_fg_occupied = "#b2bec3"
+theme.taglist_bg_empty = "#636e72"
 theme.taglist_fg_empty = "#ffffff"
-theme.taglist_bg_urgent = "#C92132"
-theme.taglist_fg_urgent = "#282828"
+theme.taglist_bg_urgent = "#e17055"
+theme.taglist_fg_urgent = "#ffffff"
+theme.taglist_shape = gears.shape.rounded_rect
 
 theme.tasklist_bg_normal = "#000000"
 theme.tasklist_fg_normal = "#ffffff"
@@ -135,6 +136,8 @@ local volume_widget = require("widgets_config.volume_widget")
 local kbd_widget = require("widgets.kbd_widget.kbd_widget")
 -- brightness
 local brightness_widget = require("widgets_config.brightness_widget")
+-- music
+local music_widget = require("widgets_config.music_widget")
 
 function theme.connect(s)
 	-- Quake application
@@ -185,7 +188,7 @@ function theme.connect(s)
 	--s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s, height = 16, bg = theme.bg_normal, fg = theme.fg_focus })
+	s.mywibox = awful.wibar({ position = "top", screen = s, height = 16, bg = "#00000000", fg = theme.fg_focus })
 	local net_speed_widget = require("widgets.net_speed_widget.net_speed")
 
 	-- Add widgets to the wibox
@@ -203,24 +206,46 @@ function theme.connect(s)
 		},
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			-- Net speed widget
+			wibox.container.background(wibox.container.margin(net_speed_widget(), 2, 2), "#55a3ff", gears.shape.rounded_rect),
+			-- Spacer
+			wibox.widget.textbox(" "),
+			-- Music widget
+			music_widget,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- Keyboard
 			kbd_widget,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- Volume
-      brightness_widget,
+      		brightness_widget,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			volume_widget,
-			-- Net speed widget
-			wibox.container.background(net_speed_widget(), theme.yellow, gears.shape.rounded_rect),
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- Temp
 			temp_widget,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- CPU widget
 			cpu_widget,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- Mem widget
 			mem_widget,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- Battery widget
 			battery_widget.battery_widget1,
 			battery_widget.battery_widget2,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- Clock
 			clock_widget,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- Layout box
 			s.mylayoutbox,
 		},

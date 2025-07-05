@@ -44,8 +44,8 @@ kbd_widget:buttons(awful.util.table.join(
 ))
 
 local kbd_widget_container = wibox.container.background(
-    wibox.container.margin(wibox.widget({ language_icon, kbd_widget, layout = wibox.layout.align.horizontal }), 0, 0, 0, 0),
-    theme.green,
+    wibox.container.margin(wibox.widget({ language_icon, kbd_widget, layout = wibox.layout.align.horizontal }), 2, 4),
+    "#fd79a8",
     gears.shape.rounded_rect
 )
 

@@ -17,8 +17,8 @@ local mem = lain.widget.mem({
 	end,
 })
 local mem_widget = wibox.container.background(
-	wibox.container.margin(wibox.widget({ mem_icon, mem.widget, layout = wibox.layout.align.horizontal }), 0, 0),
-	theme.pink,
+	wibox.container.margin(wibox.widget({ mem_icon, mem.widget, layout = wibox.layout.align.horizontal }), 2, 4),
+	"#e17055",
   gears.shape.rounded_rect
 )
 
