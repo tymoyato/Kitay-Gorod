@@ -206,16 +206,16 @@ function theme.connect(s)
 		},
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			-- Music widget
+			music_widget,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- Net speed widget
 			wibox.container.background(
 				wibox.container.margin(net_speed_widget(), 2, 2),
 				"#55a3ff",
 				gears.shape.rounded_rect
 			),
-			-- Spacer
-			wibox.widget.textbox(" "),
-			-- Music widget
-			music_widget,
 			-- Spacer
 			wibox.widget.textbox(" "),
 			-- Keyboard

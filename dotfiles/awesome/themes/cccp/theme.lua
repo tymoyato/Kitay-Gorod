@@ -223,16 +223,16 @@ function theme.connect(s)
 		},
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			-- Music widget
+			music_widget,
+			-- Spacer
+			wibox.widget.textbox(" "),
 			-- Net speed widget with CCCP colors
 			wibox.container.background(
 				wibox.container.margin(net_speed_widget(), 2, 2),
 				"#DC143C",
 				gears.shape.rounded_rect
 			),
-			-- Spacer
-			wibox.widget.textbox(" "),
-			-- Music widget
-			music_widget,
 			-- Spacer
 			wibox.widget.textbox(" "),
 			-- Keyboard
