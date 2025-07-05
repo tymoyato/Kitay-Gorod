@@ -144,6 +144,7 @@ local editor = os.getenv("EDITOR") or "editor"
 local editor_cmd = TERMINAL .. " -e " .. editor
 awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
 awful.spawn.with_shell("~/.config/awesome/utils/apps.sh")
+awful.spawn.with_shell("~/.config/awesome/display-setup.sh")
 -- awful.spawn.with_shell("sudo -u ervin DISPLAY=:0 /home/ervin/.utils/home_reset_display.sh")
 -- awful.spawn.with_shell("~/.utils/apps.sh")
 -- awful.spawn.with_shell("~/.utils/vpn.sh")
