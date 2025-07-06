@@ -1,8 +1,10 @@
 -- Clock
 local wibox = require("wibox")
 local awful = require("awful")
-local lain = require("lain")
 local gears = require("gears")
+
+-- For graphical calendar
+local calendar_popup = require("awful.widget.calendar_popup").month
 
 theme.widget_clock = theme.dir .. "/icons/widgets/clock.png"
 local clock_icon = wibox.widget.imagebox(theme.widget_clock)
@@ -13,15 +15,36 @@ local clock_widget = wibox.container.background(
 	gears.shape.rounded_rect
 )
 
--- Calendar
-local calendar = lain.widget.calendar({
-	cal = "cal --color=always",
-	attach_to = { clock_widget },
-	notification_preset = {
-		font = "Meslo LGS Regular 10",
-		fg = theme.fg_normal,
-		bg = theme.bg_normal,
+-- Soviet Colors
+local soviet_dark_red = "#7B1A1A"
+local soviet_gold = "#FFD700"
+local soviet_white = "#FFFFFF"
+local soviet_black = "#222222"
+
+-- Graphical Calendar Popup with Soviet theme
+local cal_popup = calendar_popup({
+	start_sunday = false,
+	spacing = 10,
+	style_month = {
+		border_width = 2,
+		border_color = soviet_gold,
+		padding = 8,
+		bg_color = soviet_dark_red,
+		fg_color = soviet_white,
 	},
+	style_header = { fg_color = soviet_gold, font = "Meslo LGS Regular 12", bg_color = soviet_dark_red },
+	style_weekday = { fg_color = soviet_gold, font = "Meslo LGS Regular 10", bg_color = soviet_dark_red },
+	style_focus = { fg_color = soviet_black, bg_color = soviet_gold, markup = true },
+	style_normal = { fg_color = soviet_white, bg_color = soviet_dark_red },
+	long_weekdays = true,
 })
+
+-- Show on hover
+clock_widget:connect_signal("mouse::enter", function()
+	cal_popup:attach(clock_widget, "tr", { on_hover = true })
+end)
+clock_widget:connect_signal("mouse::leave", function()
+	cal_popup.visible = false
+end)
 
 return clock_widget

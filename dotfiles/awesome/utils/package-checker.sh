@@ -15,6 +15,29 @@ LOG_FILE="$PROJECT_ROOT/linux/package_updates.log"
 # Create linux directory if it doesn't exist
 mkdir -p "$PROJECT_ROOT/linux"
 
+# Check if we should run today
+TODAY=$(date '+%Y-%m-%d')
+LAST_RUN_FILE="$PROJECT_ROOT/linux/last_package_check.txt"
+
+# Check if force run is requested (from widget click)
+FORCE_RUN=false
+if [ "$1" = "--force" ]; then
+    FORCE_RUN=true
+    echo "Force run requested - bypassing daily limit"
+fi
+
+# Check if we already ran today (unless force run)
+if [ "$FORCE_RUN" = false ] && [ -f "$LAST_RUN_FILE" ]; then
+    LAST_RUN=$(cat "$LAST_RUN_FILE" 2>/dev/null)
+    if [ "$LAST_RUN" = "$TODAY" ]; then
+        echo "Package check already run today ($TODAY). Skipping."
+        exit 0
+    fi
+fi
+
+# Log that we're starting the check
+echo "Starting package check for $TODAY"
+
 # Remove existing log file if it exists
 if [ -f "$LOG_FILE" ]; then
     rm "$LOG_FILE"
@@ -75,4 +98,8 @@ if [ -f "$LOG_FILE" ]; then
 fi
 
 log_with_timestamp "=== Package Version Check Finished ==="
-echo "" >> "$LOG_FILE" 
+echo "" >> "$LOG_FILE"
+
+# Record that we ran today
+echo "$TODAY" > "$LAST_RUN_FILE"
+echo "Recorded run date: $TODAY in $LAST_RUN_FILE" 

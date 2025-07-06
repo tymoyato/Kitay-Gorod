@@ -138,6 +138,8 @@ local kbd_widget = require("widgets.kbd_widget.kbd_widget")
 local brightness_widget = require("widgets_config.brightness_widget")
 -- music
 local music_widget = require("widgets_config.music_widget")
+-- package log
+local package_log_widget = require("themes.kitay.widgets_config.package_log_widget")
 
 function theme.connect(s)
 	-- Quake application
@@ -244,6 +246,10 @@ function theme.connect(s)
 			-- Battery widget
 			battery_widget.battery_widget1,
 			battery_widget.battery_widget2,
+			-- Spacer
+			wibox.widget.textbox(" "),
+			-- Package log widget
+			package_log_widget.widget,
 			-- Spacer
 			wibox.widget.textbox(" "),
 			-- Clock

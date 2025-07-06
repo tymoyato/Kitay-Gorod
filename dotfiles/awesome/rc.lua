@@ -144,7 +144,8 @@ local editor = os.getenv("EDITOR") or "editor"
 local editor_cmd = TERMINAL .. " -e " .. editor
 awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
 awful.spawn.with_shell("~/.config/awesome/utils/apps.sh")
-awful.spawn.with_shell("~/.Kitay-Gorod/dotfiles/awesome/utils/package-checker.sh")
+-- Run package checker with output logging and delay
+awful.spawn.with_shell("sleep 2 && ~/.Kitay-Gorod/dotfiles/awesome/utils/package-checker.sh >> ~/.Kitay-Gorod/linux/package-checker-debug.log 2>&1")
 awful.spawn.with_shell("~/.config/awesome/display-setup.sh")
 -- awful.spawn.with_shell("sudo -u ervin DISPLAY=:0 /home/ervin/.utils/home_reset_display.sh")
 -- awful.spawn.with_shell("~/.utils/apps.sh")
@@ -453,7 +454,18 @@ GLOBALKEYS = gears.table.join(
 		if theme.volume and theme.volume.update then
 			theme.volume.update()
 		end
-	end, { description = "volume down", group = "audio" })
+	end, { description = "volume down", group = "audio" }),
+
+	-- Music control
+	awful.key({ MODKEY, altkey }, "Right", function()
+		awful.spawn("playerctl next")
+	end, { description = "next track", group = "audio" }),
+	awful.key({ MODKEY, altkey }, "Left", function()
+		awful.spawn("playerctl previous")
+	end, { description = "previous track", group = "audio" }),
+	awful.key({ MODKEY, altkey }, "space", function()
+		awful.spawn("playerctl play-pause")
+	end, { description = "play/pause", group = "audio" })
 )
 
 CLIENTKEYS = gears.table.join(

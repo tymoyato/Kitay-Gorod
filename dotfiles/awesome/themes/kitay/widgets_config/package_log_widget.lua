@@ -12,6 +12,40 @@ local log_file = os.getenv("HOME") .. "/.Kitay-Gorod/linux/package_updates.log"
 local is_loading = false
 local loading_timer = nil
 
+-- Function to start loading animation
+local function start_loading_animation(widget)
+    is_loading = true
+    
+    -- Immediately show first frame with white color
+    widget:set_markup('<span color="#FFFFFF">📦</span>')
+    
+    loading_timer = gears.timer({
+        timeout = 0.5, -- Change every 500ms
+        call_now = false,
+        autostart = true,
+        callback = function()
+            if is_loading then
+                -- Toggle between white and purple colors
+                if widget:get_markup():find("#FFFFFF") then
+                    widget:set_markup('<span color="#6c5ce7">📦</span>')
+                else
+                    widget:set_markup('<span color="#FFFFFF">📦</span>')
+                end
+            end
+        end
+    })
+end
+
+-- Function to stop loading animation
+local function stop_loading_animation(widget)
+    is_loading = false
+    if loading_timer then
+        loading_timer:stop()
+        loading_timer = nil
+    end
+    widget:set_text("📦") -- Restore original icon
+end
+
 -- Function to strip ANSI color codes and format text
 local function strip_colors_and_format(text)
     -- Remove ANSI color codes
@@ -64,47 +98,13 @@ local function show_package_log()
         width = 700,
         height = 500,
         position = "top_right",
-        fg = "#FFD700", -- Gold text
-        bg = "#1a1a1a", -- Dark background
-        border_color = "#DC143C", -- Crimson red border
+        fg = "#ffffff", -- White text for kitay theme
+        bg = "#000000", -- Black background for kitay theme
+        border_color = "#6c5ce7", -- Purple border for kitay theme
         border_width = 2,
         dismiss_on_click = true, -- Dismiss when clicked
         font = "Meslo LGS Regular 10", -- Use monospace font for better formatting
     })
-end
-
--- Function to start loading animation
-local function start_loading_animation(widget)
-    is_loading = true
-    
-    -- Immediately show first frame with gold color
-    widget:set_markup('<span color="#FFD700">📦</span>')
-    
-    loading_timer = gears.timer({
-        timeout = 0.5, -- Change every 500ms
-        call_now = false,
-        autostart = true,
-        callback = function()
-            if is_loading then
-                -- Toggle between gold and red colors
-                if widget:get_markup():find("#FFD700") then
-                    widget:set_markup('<span color="#DC143C">📦</span>')
-                else
-                    widget:set_markup('<span color="#FFD700">📦</span>')
-                end
-            end
-        end
-    })
-end
-
--- Function to stop loading animation
-local function stop_loading_animation(widget)
-    is_loading = false
-    if loading_timer then
-        loading_timer:stop()
-        loading_timer = nil
-    end
-    widget:set_text("📦") -- Restore original icon
 end
 
 -- Create the widget

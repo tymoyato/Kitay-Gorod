@@ -9,6 +9,9 @@ apt:
     - gcc
     - bison
     - wmctrl
+    - bsdmainutils
+    - util-linux
+    - ncal
   essential:
     - brave-browser
     - zlib1g-dev
