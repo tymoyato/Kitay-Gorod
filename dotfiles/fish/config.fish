@@ -47,3 +47,6 @@ alias lmod='eza --long --modified --sort=modified'  # Sort by modification date 
 alias ldepth='eza --level=2'                        # Limit recursion depth to 2
 alias lignore='eza --git-ignore'                    # Ignore files mentioned in .gitignore
 alias lcontext='eza --long --context'               # Show security context
+
+# NVM setup - using custom fish implementation
+set -gx NVM_DIR "$HOME/.nvm"

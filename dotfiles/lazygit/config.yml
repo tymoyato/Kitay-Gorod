@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 git:
- branchPrefix: "*/*/"
- commitPrefix:
-    pattern: "^\\w+\\/\\w+-\\d+\\/(.*)"
-    replace: '(): $1'
+  branchPrefix: "*/*/"
+  commitPrefix:
+    - pattern: "^\\w+\\/\\w+-\\d+\\/(.*)"
+      replace: '(): $1'
 gui:
   scrollHeight: 10 # how many lines you scroll by
   scrollPastBottom: false # enable scrolling past the bottom
@@ -100,10 +100,8 @@ keybinding:
     scrollDownMain-alt2: <c-d>
     executeShellCommand: ':'
     createRebaseOptionsMenu: m
-
     # 'Files' appended for legacy reasons
     pushFiles: P
-
     # 'Files' appended for legacy reasons
     pullFiles: p
     refresh: R

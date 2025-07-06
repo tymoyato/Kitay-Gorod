@@ -1,7 +1,7 @@
-[2025-07-06 11:45:38] === Package Version Check Started ===
-[2025-07-06 11:45:38] Running version checker...
+[2025-07-06 12:30:30] === Package Version Check Started ===
+[2025-07-06 12:30:30] Running version checker...
 === Package Version Check Output ===
-Date: Sun Jul  6 11:45:38 AM CEST 2025
+Date: Sun Jul  6 12:30:30 PM CEST 2025
 User: ervin
 Host: ervin
 
@@ -17,15 +17,15 @@ Host: ervin
 Package                   Installed       Available       Status    
 ==================================================
 build-essential           12.9            12.9            [0;32mUp to date[0m
-git                       1:2.39.5-0+deb12u1 1:2.39.5-0+deb12u2 [1;33mUpdate available[0m
+git                       1:2.39.5-0+deb12u2 1:2.39.5-0+deb12u2 [0;32mUp to date[0m
 curl                      7.88.1-10+deb12u12 7.88.1-10+deb12u12 [0;32mUp to date[0m
-mercurial                 6.3.2-1         6.3.2-1+deb12u1 [1;33mUpdate available[0m
+mercurial                 6.3.2-1+deb12u1 6.3.2-1+deb12u1 [0;32mUp to date[0m
 make                      4.3-4.1         4.3-4.1         [0;32mUp to date[0m
 binutils                  2.40-2          2.40-2          [0;32mUp to date[0m
 gcc                       4:12.2.0-3      4:12.2.0-3      [0;32mUp to date[0m
 bison                     2:3.8.2+dfsg-1+b1 2:3.8.2+dfsg-1+b1 [0;32mUp to date[0m
 wmctrl                    1.07-7+b1       1.07-7+b1       [0;32mUp to date[0m
-brave-browser             1.75.180        1.80.115        [1;33mUpdate available[0m
+brave-browser             1.80.115        1.80.115        [0;32mUp to date[0m
 zlib1g-dev                Not installed   1:1.2.13.dfsg-1 [0;31mNot installed[0m
 shellcheck                0.9.0-1         0.9.0-1         [0;32mUp to date[0m
 shfmt                     3.6.0-1+b2      3.6.0-1+b2      [0;32mUp to date[0m
@@ -44,139 +44,52 @@ light                     Not installed   1.2.2-2         [0;31mNot installed[
 Package                   Installed       Available       Status    
 ==================================================
 rbenv                     1.3.2           1.3.2           [0;32mUp to date[0m
-nvm                       0.40.1          0.40.3          [1;33mUpdate available[0m
-fish                      3.7.1           4.0.2           [1;33mUpdate available[0m
-eza                       0.20.22         0.22.0          [1;33mUpdate available[0m
-btop                      1.4.0           1.4.4           [1;33mUpdate available[0m
-atuin                     18.3.0          18.6.1          [1;33mUpdate available[0m
+nvm                       0.40.3          0.40.3          [0;32mUp to date[0m
+fish                      4.0.2           4.0.2           [0;32mUp to date[0m
+eza                       0.22.0          0.22.0          [0;32mUp to date[0m
+btop                      1.4.4           1.4.4           [0;32mUp to date[0m
+atuin                     18.6.1          18.6.1          [0;32mUp to date[0m
 jless                     0.9.0           0.9.0           [0;32mUp to date[0m
-difftastic                0.61.0          0.64.0          [1;33mUpdate available[0m
+difftastic                0.64.0          0.64.0          [0;32mUp to date[0m
 bat                       0.25.0_1        0.25.0          [1;33mUpdate available[0m
-fzf                       0.56.3          0.63.0          [1;33mUpdate available[0m
-zoxide                    0.9.6           0.9.8           [1;33mUpdate available[0m
-neovim                    0.10.4_1        0.11.2          [1;33mUpdate available[0m
+fzf                       0.63.0          0.63.0          [0;32mUp to date[0m
+zoxide                    0.9.8           0.9.8           [0;32mUp to date[0m
+neovim                    0.11.2          0.11.2          [0;32mUp to date[0m
 fisher                    4.4.5           4.4.5           [0;32mUp to date[0m
 ripgrep                   14.1.1          14.1.1          [0;32mUp to date[0m
 nvim                      Not installed                   [0;31mNot installed[0m
 unzip                     6.0_8           6.0             [1;33mUpdate available[0m
-zellij                    0.41.2          0.42.2          [1;33mUpdate available[0m
-go                        1.23.4          1.24.4          [1;33mUpdate available[0m
-lazygit                   0.44.1          0.53.0          [1;33mUpdate available[0m
+zellij                    0.42.2          0.42.2          [0;32mUp to date[0m
+go                        1.24.4          1.24.4          [0;32mUp to date[0m
+lazygit                   0.53.0          0.53.0          [0;32mUp to date[0m
 lazydocker                0.24.1          0.24.1          [0;32mUp to date[0m
 
 [0;34mℹ 📋 Update Changelog:[0m
 ==================================================
-[0;34mAPT Updates:[0m
-  [1;33m• git[0m: 1:2.39.5-0+deb12u1 → 1:2.39.5-0+deb12u2
-    [0;34m📝[0m fast, scalable, distributed revision control system
-
-  [0;31m🚀 mercurial[0m: 6.3.2-1 → 6.3.2-1+deb12u1 (Major Update!)
-    [0;34m📝[0m easy-to-use, scalable distributed version control system
-
-  [0;31m🚀 brave-browser[0m: 1.75.180 → 1.80.115 (Major Update!)
-
-[2025-07-06 11:46:17] Package version check completed successfully
-[2025-07-06 11:46:17] Log file: /home/ervin/.Kitay-Gorod/linux/package_updates.log
-[2025-07-06 11:46:17] === Package Version Check Finished ===
-
-
 [0;34mHomebrew Updates:[0m
-  [0;31m🚀 nvm[0m: 0.40.1 → 0.40.3 (Major Update!)
-
-  [0;31m🚀 fish[0m: 3.7.1 → 4.0.2 (Major Update!)
-
-  [1;33m• eza[0m: 0.20.22 → 0.22.0
-
-  [0;31m🚀 btop[0m: 1.4.0 → 1.4.4 (Major Update!)
-
-  [0;31m🚀 atuin[0m: 18.3.0 → 18.6.1 (Major Update!)
-
-  [0;31m🚀 difftastic[0m: 0.61.0 → 0.64.0 (Major Update!)
-
   [1;33m• bat[0m: 0.25.0_1 → 0.25.0
 
-  [0;31m🚀 fzf[0m: 0.56.3 → 0.63.0 (Major Update!)
-
-  [0;31m🚀 zoxide[0m: 0.9.6 → 0.9.8 (Major Update!)
-
-  [1;33m• neovim[0m: 0.10.4_1 → 0.11.2
-
   [1;33m• unzip[0m: 6.0_8 → 6.0
-
-  [0;31m🚀 zellij[0m: 0.41.2 → 0.42.2 (Major Update!)
-
-  [0;31m🚀 go[0m: 1.23.4 → 1.24.4 (Major Update!)
-
-  [0;31m🚀 lazygit[0m: 0.44.1 → 0.53.0 (Major Update!)
-
-==================================================
-
-[0;31m⚠️  Major updates detected! Please review changelogs before updating.[0m
-
-[0;34mℹ 🔍 Detailed Changelog for Major Updates:[0m
-==================================================
-[0;31m🚀 mercurial[0m: 6.3.2-1 → 6.3.2-1+deb12u1
-[0;34m📋 Recent changes:[0m
-    mercurial (6.3.2-1+deb12u1) bookworm-security; urgency=high
-      * CVE-2025-2361: reflected XSS in hgweb (closes: #1100899)
-    mercurial (6.3.2-1) sid; urgency=medium
-
-[0;31m🚀 brave-browser[0m: 1.75.180 → 1.80.115
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 nvm[0m: 0.40.1 → 0.40.3
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 fish[0m: 3.7.1 → 4.0.2
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 btop[0m: 1.4.0 → 1.4.4
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 atuin[0m: 18.3.0 → 18.6.1
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 difftastic[0m: 0.61.0 → 0.64.0
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 fzf[0m: 0.56.3 → 0.63.0
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 zoxide[0m: 0.9.6 → 0.9.8
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 zellij[0m: 0.41.2 → 0.42.2
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 go[0m: 1.23.4 → 1.24.4
-[1;33m📋 No detailed changelog available[0m
-
-[0;31m🚀 lazygit[0m: 0.44.1 → 0.53.0
-[1;33m📋 No detailed changelog available[0m
 
 ==================================================
 
 [0;34mℹ 📊 Summary:[0m
-[2025-07-06 11:48:04] Package version check completed successfully
-[2025-07-06 11:48:04] Log file: /home/ervin/.Kitay-Gorod/linux/package_updates.log
-[2025-07-06 11:48:04] === Package Version Check Finished ===
-
 APT Packages:
   - Installed: 20/22
-  - Up to date: 17
-  - Updates available: 3
+  - Up to date: 20
+  - Updates available: 0
   - Not installed: 2
 
 Homebrew Packages:
   - Installed: 19/20
-  - Up to date: 5
-  - Updates available: 14
+  - Up to date: 17
+  - Updates available: 2
   - Not installed: 1
 
 [0;32m✓ Version check completed![0m
 
 === Check Completed ===
-[2025-07-06 11:48:13] Package version check completed successfully
-[2025-07-06 11:48:13] Log file: /home/ervin/.Kitay-Gorod/linux/package_updates.log
-[2025-07-06 11:48:13] === Package Version Check Finished ===
+[2025-07-06 12:32:43] Package version check completed successfully
+[2025-07-06 12:32:43] Log file: /home/ervin/.Kitay-Gorod/linux/package_updates.log
+[2025-07-06 12:32:43] === Package Version Check Finished ===
 

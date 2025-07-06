@@ -224,11 +224,21 @@ function _nvm_current
 end
 
 function _nvm_node_info
-    set --local npm_path (string replace bin/npm-cli.js "" (realpath (command --search npm)))
-    test -f $npm_path/package.json || set --local npm_version_default (command npm --version)
-    command node --eval "
-        console.log(process.version)
-        console.log('$npm_version_default' ? '$npm_version_default': require('$npm_path/package.json').version)
-        console.log(process.execPath)
-    " | string replace -- ~ \~
+    if set --query nvm_current_version && test $nvm_current_version != system
+        set --local npm_path (string replace bin/npm-cli.js "" (realpath $nvm_data/$nvm_current_version/bin/npm))
+        test -f $npm_path/package.json || set --local npm_version_default ($nvm_data/$nvm_current_version/bin/npm --version)
+        $nvm_data/$nvm_current_version/bin/node --eval "
+            console.log(process.version)
+            console.log('$npm_version_default' ? '$npm_version_default': require('$npm_path/package.json').version)
+            console.log(process.execPath)
+        " | string replace -- ~ \~
+    else
+        set --local npm_path (string replace bin/npm-cli.js "" (realpath (command --search npm)))
+        test -f $npm_path/package.json || set --local npm_version_default (command npm --version)
+        command node --eval "
+            console.log(process.version)
+            console.log('$npm_version_default' ? '$npm_version_default': require('$npm_path/package.json').version)
+            console.log(process.execPath)
+        " | string replace -- ~ \~
+    end
 end
